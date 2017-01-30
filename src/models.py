@@ -5,12 +5,12 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     user = models.ForeignKey(User, null=True, blank=True)
-    name = models.CharField(null=False)
+    name = models.CharField(max_length=255, null=False)
 
 class Ethnicity(models.Model):
-    name = models.CharField(null=False)
-    lat = models.DecimalField()
-    lon = models.DecimalField()
+    name = models.CharField(max_length=255, null=False)
+    lat = models.DecimalField(max_digits=9, decimal_places=6)
+    lon = models.DecimalField(max_digits=9, decimal_places=6)
 
 class UserEthnicity(models.Model):
     profile = models.ForeignKey(Profile, null=False)
@@ -18,11 +18,11 @@ class UserEthnicity(models.Model):
     percent = models.IntegerField()
 
 class SubPopulation(models.Model):
-    name = models.CharField(null=False)
+    name = models.CharField(max_length=255, null=False)
     specific = models.BooleanField(null=False)
 
 class Snp(models.Model):
-    name = models.CharField(null=False)
+    name = models.CharField(max_length=255, null=False)
     summary = models.TextField(null=False)
     description = models.TextField(null=False)
 
