@@ -11,7 +11,7 @@ class Ethnicity(models.Model):
     name = models.CharField(max_length=255, null=False)
     lat = models.DecimalField(max_digits=9, decimal_places=6)
     lon = models.DecimalField(max_digits=9, decimal_places=6)
-    
+
 class UserEthnicity(models.Model):
     profile = models.ForeignKey(Profile, null=False)
     ethnicity = models.ForeignKey(Ethnicity, null=False)
