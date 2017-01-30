@@ -1,30 +1,31 @@
 from __future__ import unicode_literals
 
 from django.db import models
-
-class SubPopulations(models.Model):
-    name = models.CharField(null=false)
-    specific = models.BooleanField(null=false)
-
-class DataPoints(models.Model):
-    snp = models.CharField()
-    percent = models.IntegerField(null=false)
-
-class Snp(model.Model):
-    name = models.CharField(null=false)
-    summary = models.TextField(null=false)
-    description = models.TextField(null=false)
+from django.contrib.auth.models import User
 
 class Profile(models.Model):
     user = models.ForeignKey(User, null=True, blank=True)
     name = models.CharField(null=False)
 
-class UserEthnicities(models.Model):
+class Ethnicity(models.Model):
+    name = models.CharField(null=False)
+    lat = models.DecimalField()
+    lon = models.DecimalField()
+
+class UserEthnicity(models.Model):
     profile = models.ForeignKey(Profile, null=False)
     ethnicity = models.ForeignKey(Ethnicity, null=False)
     percent = models.IntegerField()
 
-class Ethnicities(models.Model):
+class SubPopulation(models.Model):
     name = models.CharField(null=False)
-    lat = models.DecimalField()
-    lon = models.DecimalField()
+    specific = models.BooleanField(null=False)
+
+class Snp(models.Model):
+    name = models.CharField(null=False)
+    summary = models.TextField(null=False)
+    description = models.TextField(null=False)
+
+class DataPoint(models.Model):
+    snp = models.ForeignKey(Snp, null=False)
+    percent = models.IntegerField(null=False)
