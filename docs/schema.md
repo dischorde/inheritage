@@ -21,7 +21,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 name        |  char field   |  not null
-lat         |
+lat         | 
 log         |
 
 ## sub_populations
