@@ -11,7 +11,7 @@ const Root = ({store}) => {
       <Router history={hashHistory}>
         <Route path="" component={HeaderContainer}>
           <Route path="/" component={HomeContainer}></Route>
-          <Route path="/profile/:profileId" component={ProfileContainer}></Route>
+          <Route path="/profile" component={ProfileContainer}></Route>
           // more here
         </Route>
       </ Router>
