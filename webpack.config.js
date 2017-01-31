@@ -6,7 +6,7 @@ module.exports = {
   entry: './frontend/entry.jsx', // entry point of our app. assets/js/index.js should require other js modules and dependencies it needs
 
   output: {
-      path: path.resolve('./src/static/'),
+      path: path.resolve('./display/static/'),
       filename: "bundle.js",
   },
 
