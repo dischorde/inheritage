@@ -1,3 +1,27 @@
-#header h1 {
+#header {
   font-family: 'Source Sans Pro', sans-serif;
+  position: fixed;
+  width: 100%;
+  background-color: #3CCD70;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header h1 {
+  padding: 10px 15px;
+  font-size: 150%;
+}
+
+#header i {
+  padding: 10px 15px;
+  font-size: 200%;
+}
+
+#header i:hover {
+  cursor: pointer;
+}
+
+#header h1:hover {
+  cursor: pointer;
 }
