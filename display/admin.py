@@ -10,6 +10,17 @@ from .models import DataPoint
 admin.site.register(Profile)
 admin.site.register(Ethnicity)
 admin.site.register(UserEthnicity)
-admin.site.register(SubPopulation)
-admin.site.register(Snp)
-admin.site.register(DataPoint)
+
+class  SubPopAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
+admin.site.register(SubPopulation, SubPopAdmin)
+
+class  SnpAdmin(admin.ModelAdmin):
+    list_display = ['name', 'summary']
+
+class  DataPointAdmin(admin.ModelAdmin):
+    list_display = ['snp', 'sub_population', 'percent']
+
+admin.site.register(Snp, SnpAdmin)
+admin.site.register(DataPoint, DataPointAdmin)
