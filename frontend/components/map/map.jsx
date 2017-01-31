@@ -69,14 +69,13 @@ class Map extends React.Component {
             {
                 "lightness": -90
             }, {
-              color: '#424647'}
-        ]
+              color: '#424647'} ]
       }, {
       featureType: "poi",
-      stylers: [
-        { visibility: "off" }
-        ]
-      }
+      stylers: [{ visibility: "off" }]
+      } ,
+       { featureType: "road",
+         stylers: [{ visibility: "off" } ] }
     ]
     }
   };
