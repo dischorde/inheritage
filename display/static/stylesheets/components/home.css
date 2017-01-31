@@ -61,7 +61,7 @@
 }
 
 #ethnicity-form-container {
-  height: 100%;
+  padding-bottom: 100px;
   background: #424647;
 
   font-family: 'Source Sans Pro', sans-serif;
@@ -75,7 +75,7 @@
 }
 
 #ethnicity-form {
-  padding-top: 30px;
+  padding-top: 40px;
   text-align: center;
 }
 
@@ -83,33 +83,33 @@
   width: 40px;
   height: 25px;
   border-bottom: 2px solid #3CCD70;
+  font-size: 120%;
+  margin-right: 5px;
+}
+
+#ethnicity-form span {
+  margin-right: 30px;
+  font-size: 120%;
+}
+
+#ethnicities-dropdown {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-weight: 400;
+  font-size: 100%;
   margin-right: 30px;
 }
 
-select {
-   -webkit-appearance: none;
-   -moz-appearance: none;
-   appearance: none;
+#ethnicities-dropdown:hover {
+  cursor: pointer;
 }
 
-.styled-select {
-   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
-   height: 29px;
-   overflow: hidden;
-   width: 240px;
+.fa-plus-circle {
+  color: #3CCD70;
+  font-size: 130%;
 }
 
-.styled-select select {
-   background: transparent;
-   border: none;
-   font-size: 14px;
-   height: 29px;
-   padding: 5px; /* If you add too much padding here, the options won't show in IE */
-   width: 268px;
-}
-
-.styled-select {
-   -webkit-border-radius: 5px;
-   -moz-border-radius: 5px;
-   border-radius: 5px;
+.fa-plus-circle:hover {
+  cursor: pointer;
 }
