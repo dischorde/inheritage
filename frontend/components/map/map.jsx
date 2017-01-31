@@ -16,15 +16,10 @@ class Map extends React.Component {
     super(props);
     this.state = {
       _mapOptions : {
-        center: new google.maps.LatLng(0, 0),
+        center: {lat: 15, lng: 0},
   	     zoom: 3,
   	     minZoom: 3,
-         draggable: true,
-         disableDefaultUI: false,
          backgroundColor: "#B6B6B6",
-         mapTypeControlOptions: {
-            mapTypeIds: [ 'styled_map']
-          },
           styles: [
             {
             featureType: 'water',
@@ -76,18 +71,20 @@ class Map extends React.Component {
             }, {
               color: '#424647'}
         ]
-    }
-          ]
+      }, {
+      featureType: "poi",
+      stylers: [
+        { visibility: "off" }
+        ]
       }
-    };
-  }
+    ]
+    }
+  };
+}
 
   componentDidMount() {
     const map = this.refs.map;
     this.map = new google.maps.Map(map, this.state._mapOptions);
-    map.setMapTypeId('styled_map');
-    map.setOptions({draggable: true});
-    this._registerListeners();
   }
 
   _registerListeners() {
