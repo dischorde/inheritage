@@ -1,7 +1,66 @@
-#home-container {
+#home {
   height: 100%;
+}
+
+#home-img {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url("https://source.unsplash.com/JuKbaozIo0k/2736x1824");
   background-size: cover;
   background-position: center;
-  background-image: url("https://source.unsplash.com/oMAz8npl-dc/2880x1920");
-  position: relative;
+  background-attachment: fixed;
+}
+
+.typewriter {
+  display: flex;
+  justify-content: center;
+  font-size: 300%;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding-top: 110px;
+}
+
+.typewriter span {
+  font-weight: 600;
+}
+
+@-webkit-keyframes typing { from { width: 0; } }
+@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
+
+.typewriter h1 {
+  font-weight: 300;
+	border-right: .1em solid #3CCD70;
+	/*width: 16.5em;*/
+	width: 12ch;
+	white-space: nowrap;
+	overflow: hidden;
+  letter-spacing: .7px;
+	-webkit-animation: typing 2s steps(30, end),
+	           blink-caret .5s step-end infinite alternate;
+}
+
+#see-more {
+  width: 100%;
+}
+
+#see-more i {
+  width: 100%;
+  position: absolute;
+  bottom: 20px;
+  font-size: 150%;
+  text-align: center;
+}
+
+#see-more p {
+  width: 100%;
+  position: absolute;
+  bottom: 50px;
+  text-transform: uppercase;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align:center;
+}
+
+#ethnicity-form-container {
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
 }

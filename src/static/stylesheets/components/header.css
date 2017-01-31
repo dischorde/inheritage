@@ -6,11 +6,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
 }
 
 #header h1 {
-  padding: 10px 15px;
-  font-size: 150%;
+  padding: 3px 15px;
+}
+
+#header img {
+  height: 35px;
+  width: auto;
 }
 
 #header i {
