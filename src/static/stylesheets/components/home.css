@@ -62,5 +62,54 @@
 
 #ethnicity-form-container {
   height: 100%;
-  background-color: rgba(0, 0, 0, .5);
+  background: #424647;
+
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+}
+
+#ethnicity-form-container h1 {
+  text-align: center;
+  padding-top: 100px;
+  font-size: 200%;
+}
+
+#ethnicity-form {
+  padding-top: 30px;
+  text-align: center;
+}
+
+#ethnicity-form-percent {
+  width: 40px;
+  height: 25px;
+  border-bottom: 2px solid #3CCD70;
+  margin-right: 30px;
+}
+
+select {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+}
+
+.styled-select {
+   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+   height: 29px;
+   overflow: hidden;
+   width: 240px;
+}
+
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 268px;
+}
+
+.styled-select {
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
 }

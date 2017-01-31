@@ -1,4 +1,5 @@
 import React from 'react';
+import EthnicityFormContainer from './ethnicity_form_container';
 
 class Home extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class Home extends React.Component {
         </div>
         <div id="ethnicity-form-container">
           <h1>input your ethnicity</h1>
+          <EthnicityFormContainer />
         </div>
       </div>
     );
