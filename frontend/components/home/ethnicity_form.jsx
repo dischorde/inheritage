@@ -11,14 +11,11 @@ class EthnicityForm extends React.Component {
   }
 
   handleAddInput() {
-
-  }
-
-  render() {
-    return(
-      <form id="ethnicity-form">
+    const form = document.getElementById("ethnicity-form");
+    const newField = (
+      <div>
         <input id="ethnicity-form-percent"></input><span>%</span>
-        <span id="num-dropdowns">
+        <span id="dropdowns">
           <select id="ethnicities-dropdown" name="ethnicities-dropdown">
             <option selected disabled>ethnicity</option>
             <option value="italian">Italian</option>
@@ -29,6 +26,28 @@ class EthnicityForm extends React.Component {
           <i onClick={this.handleAddInput} className="fa fa-plus-circle" aria-hidden="true"></i>
           <br></br>
         </span>
+      </div>
+    );
+    form.appendChild(newField);
+  }
+
+  render() {
+    return(
+      <form id="ethnicity-form">
+        <div>
+          <input id="ethnicity-form-percent"></input><span>%</span>
+          <span id="dropdowns">
+            <select id="ethnicities-dropdown" name="ethnicities-dropdown">
+              <option selected disabled>ethnicity</option>
+              <option value="italian">Italian</option>
+              <option value="french">French</option>
+              <option value="spanish">Spanish</option>
+              <option value="Scottich">Scottish</option>
+            </select>
+            <i onClick={this.handleAddInput} className="fa fa-plus-circle" aria-hidden="true"></i>
+            <br></br>
+          </span>
+        </div>
       </form>
     );
   }
