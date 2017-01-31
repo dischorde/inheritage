@@ -27,5 +27,6 @@ class Snp(models.Model):
     description = models.TextField(null=False)
 
 class DataPoint(models.Model):
+    sub_population = models.ForeignKey(SubPopulation)
     snp = models.ForeignKey(Snp, null=False)
     percent = models.IntegerField(null=False)
