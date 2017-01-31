@@ -62,13 +62,13 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('percent', models.IntegerField()),
-                ('ethnicity', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='src.Ethnicity')),
-                ('profile', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='src.Profile')),
+                ('ethnicity', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='display.Ethnicity')),
+                ('profile', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='display.Profile')),
             ],
         ),
         migrations.AddField(
             model_name='datapoint',
             name='snp',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='src.Snp'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='display.Snp'),
         ),
     ]
