@@ -18,8 +18,8 @@ class Map extends React.Component {
       _mapOptions : {
         center: {lat: 15, lng: 0},
   	     zoom: 3,
-  	     minZoom: 3,
-         backgroundColor: "#B6B6B6",
+  	     minZoom: 2,
+         backgroundColor: "#464646",
           styles: [
             {
             featureType: 'water',
@@ -47,7 +47,7 @@ class Map extends React.Component {
           ]
         },
         {
-        featureType: "administrative.country",
+        featureType: "administrative",
         elementType: "geometry.stroke",
         stylers: [
             { visibility: "off" }
@@ -67,9 +67,9 @@ class Map extends React.Component {
                 "visibility": "on"
             },
             {
-                "lightness": -90
+                "lightness": -98
             }, {
-              color: '#424647'} ]
+              color: '#212121'} ]
       }, {
       featureType: "poi",
       stylers: [{ visibility: "off" }]
