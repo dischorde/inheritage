@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import HeaderContainer from './header/header_container';
 import HomeContainer from './home/home_container';
+import ProfileContainer from './profile/profile_container';
 
 const Root = ({store}) => {
   return (
@@ -10,6 +11,7 @@ const Root = ({store}) => {
       <Router history={hashHistory}>
         <Route path="" component={HeaderContainer}>
           <Route path="/" component={HomeContainer}></Route>
+          <Route path="/profile/:profileId" component={ProfileContainer}></Route>
           // more here
         </Route>
       </ Router>
