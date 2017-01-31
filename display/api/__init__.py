@@ -1,0 +1,1 @@
+from snps import SnpResource

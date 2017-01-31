@@ -2,18 +2,22 @@ from restless.dj import DjangoResource
 
 from display.models import Snp
 
-class SnoResource(DjangoResource):
+class SnpResource(DjangoResource):
     def detail(self, id):
-        snp = Snp.objects.get(pk=pk)
+        snp = Snp.objects.get(id=id)
+
+        dp_set = snp.datapoint_set.all()
+        data_points = {}
+        for dp in dp_set:
+            data_points[dp.id] = {
+                'id': dp.id,
+                'percent': dp.percent
+                'name': dp.sub_population.name
+            }
 
         return {
-            'title': post.title,
-            'author': {
-                'id': post.user.id,
-                'username': post.user.username,
-                'date_joined': post.user.date_joined,
-
-            },
-            'body': post.content,
-            # ...
+            'id': snp.id,
+            'name': snp.name,
+            'description': snp.description,
+            'data_points': data_points
         }

@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from display.api import *
 
 from display import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.root, name='root'),
+    url(r'api/snps/', include(SnpResource.urls()))
 ]
