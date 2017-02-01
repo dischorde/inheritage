@@ -1,7 +1,8 @@
 from restless.dj import DjangoResource
 
-from display.models import Profile
-from display.models import DataPoint
+from display.models import *
+from django.contrib.auth.models import User
+
 
 class ProfileResource(DjangoResource):
     def detail(self, pk):
@@ -36,3 +37,24 @@ class ProfileResource(DjangoResource):
             'name': profile.name,
             'ethnicities': ethnicities
         }
+
+     def create(self):
+        current_user = None
+        try:
+            id = data['user_id']
+            current_user = User.objects.get(id=id)
+        except (KeyError, User.DoesNotExist):
+            pass
+
+        new_profile = Profile.objects.create(
+            user=current_user,
+            name=self.data['name']
+        )
+
+        for eth in data['ethinicities']:
+            ethnicity = Ethnicity.objects.get(id=eth.id)
+            UserEthnicity.objects.create(
+                profile=new_profile,
+                ethnicity=ethnicity,
+                percent=eth.percent
+            )
