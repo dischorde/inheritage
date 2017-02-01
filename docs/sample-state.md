@@ -3,13 +3,7 @@
 {
   profile: {
     profileId: 1,
-    name: "Lauren Madigan"
-  },
-  forms: {
-    signUp: { errors: [] },
-    logIn: { errors: [] },
-    ethnicity: { errors: [] }
-  },
+    name: "Lauren Madigan",
   ethnicities: {
     1: {
       name: "Italian",
