@@ -1,9 +1,11 @@
+body{overflow: visible !important;}
+
 .profile-info-container{
   position: absolute;
   z-index: 1;
   top: 0;
   left: 0;
-  width: 360px;
+  width: 300px;
   height: 100%;
   background-color: transparent;
   display: flex;
