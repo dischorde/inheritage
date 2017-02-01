@@ -3,10 +3,9 @@ body{overflow: visible !important;}
 .profile-info-container{
   position: absolute;
   z-index: 1;
-  top: 0;
+  bottom: 0;
   left: 0;
-  width: 300px;
-  height: 100%;
+  width: 250px;
   background-color: transparent;
   display: flex;
   flex-direction: column;
@@ -16,13 +15,13 @@ body{overflow: visible !important;}
   background: black;
   opacity: 0.6;
   width: 100%;
-  height: 300px;
+  height: 200px;
 }
 
 .genetic-info-container{
   overflow: scroll;
   background: black;
-  margin-bottom: -20px;
+  /*margin-bottom: -20px;*/
 }
 
 .ethnicity-container{
@@ -36,8 +35,8 @@ body{overflow: visible !important;}
   background: -o-linear-gradient(#242424, #191919); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(#242424, #191919); /* For Firefox 3.6 to 15 */
   background: linear-gradient(#242424, #191919);
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   display: flex;
   justify-content: center;
   color: white;

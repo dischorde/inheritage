@@ -17,23 +17,23 @@ class Profile extends React.Component {
             percent: "20%",
             lat: 53.3498,
               long: 6.2603},
-            {name: "german",
-              percent: "10%",
-              lat: 51.1657,
-                long:  10.4515},
-              {name: "Scotish",
-                percent: "10%",
-                lat: 56.4907 ,
-                  long: 4.2026},
-                {name: "Dutch",
+              {name: "german",
                   percent: "10%",
-                  lat: 52.1326,
-                    long: 5.2913},
-                  {name: "Japanese",
+                  lat: 51.1657,
+                    long:  10.4515},
+                  {name: "Scotish",
                     percent: "10%",
-                    lat: 36.2048,
-                      long: 138.2529}
-      ]
+                    lat: 56.4907 ,
+                      long: 4.2026},
+                    {name: "Dutch",
+                      percent: "10%",
+                      lat: 52.1326,
+                        long: 5.2913},
+                      {name: "Japanese",
+                        percent: "10%",
+                        lat: 36.2048,
+                          long: 138.2529}
+                  ]
 
     };
   }
