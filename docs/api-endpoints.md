@@ -13,13 +13,6 @@
 - `GET /api/profile/:id`
 - `POST /api/profile/`
 
-
-### Ethnicities
-
-- `GET /api/profile/:profile_id/ethnicities/`
-
 ### SNPs
 
 - `GET /api/snp/:id`
-
-
