@@ -4,7 +4,7 @@
   profile: {
     profileId: 1,
     name: "Lauren Madigan",
-  ethnicities: [
+    ethnicities: [
       name: "Italian",
       percent: "50%",
       snps: [
@@ -14,7 +14,8 @@
           summary: "can’t taste bitterness"
         }
       ]
-    ],
+    ]
+  },
   snp: {
     id: 1,
     name: "rs1234",
