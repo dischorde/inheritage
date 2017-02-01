@@ -27,6 +27,8 @@ class ProfileResource(DjangoResource):
 
             detail = {
                 'name': user_ethnicity.ethnicity.name,
+                'lat': user_ethnicity.ethnicity.lat,
+                'long': user_ethnicity.ethnicity.lon,
                 'percent': user_ethnicity.percent,
                 'data_points': data_points
             }
@@ -38,7 +40,7 @@ class ProfileResource(DjangoResource):
             'ethnicities': ethnicities
         }
 
-     def create(self):
+    def create(self):
         current_user = None
         try:
             id = data['user_id']
@@ -58,3 +60,5 @@ class ProfileResource(DjangoResource):
                 ethnicity=ethnicity,
                 percent=eth.percent
             )
+
+        return new_profile
