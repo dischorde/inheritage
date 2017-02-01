@@ -12,8 +12,8 @@
   },
   ethnicities: {
     1: {
-      id: 1,
       name: "Italian",
+      percent: "50%",
       snps: [
         {
           id: 1,
