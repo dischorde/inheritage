@@ -15,7 +15,6 @@ class Home extends React.Component {
           </section>
         </div>
         <div id="ethnicity-form-container">
-          <h1>I'm...</h1>
           <EthnicityFormContainer />
         </div>
       </div>
