@@ -16,8 +16,8 @@ class Map extends React.Component {
     super(props);
     this.state = {
       _mapOptions : {
-        center: {lat: 15, lng: 0},
-  	     zoom: 3,
+        center: {lat: 35, lng: -30},
+  	     zoom: 2,
   	     minZoom: 2,
          backgroundColor: "#464646",
           styles: [
@@ -79,11 +79,35 @@ class Map extends React.Component {
     ]
     }
   };
+  this.setMarkers = this.setMarkers.bind(this);
+  this.addMarkersWithTimeOut = this.addMarkersWithTimeOut.bind(this);
 }
 
-  componentDidMount() {
-    const map = this.refs.map;
-    this.map = new google.maps.Map(map, this.state._mapOptions);
+
+componentDidMount() {
+  const map = this.refs.map;
+  this.map = new google.maps.Map(map, this.state._mapOptions);
+  
+  this.setMarkers(this.map);
+}
+
+setMarkers(map) {
+  for(let i=0; i < this.props.ethnicities.length; i++){
+    let lat = this.props.ethnicities[i].lat;
+    let long = this.props.ethnicities[i].long;
+    this.addMarkersWithTimeOut(map, lat, long, i * 400);
+
+  }
+}
+addMarkersWithTimeOut(map, lat, long, timeout) {
+  var markers = [];
+    window.setTimeout(function() {
+         markers.push(new google.maps.Marker({
+           position: {lat: lat, lng: long},
+           map: map,
+           animation: google.maps.Animation.DROP
+         }));
+       }, timeout);
   }
 
   _registerListeners() {
@@ -99,3 +123,25 @@ class Map extends React.Component {
 }
 
 export default Map;
+
+//
+// componentDidMount() {
+//   const map = this.refs.map;
+//   this.map = new google.maps.Map(map, this.state._mapOptions);
+//
+//   var marker = new google.maps.Marker({
+//           position: {
+//              lat: 41.9028, lng: 12.4964
+//           },
+//           map: this.map,
+//           title: '!'
+//         });
+// }
+
+// var marker = new google.maps.Marker({
+//       position: {
+//               lat: lat, lng: long
+//             },
+//        map: map,
+//        title: 'Hello World!'
+//      });
