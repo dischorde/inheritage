@@ -42,3 +42,5 @@ class UserEthnicity(models.Model):
     profile = models.ForeignKey(Profile, null=False)
     ethnicity = models.ForeignKey(Ethnicity, null=False)
     percent = models.IntegerField()
+    def ethnicity_ids(self):
+        return self.ethnicity.populations.all().values('id')
