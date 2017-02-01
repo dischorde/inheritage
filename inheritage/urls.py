@@ -22,5 +22,6 @@ from display import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.root, name='root'),
-    url(r'api/snps/', include(SnpResource.urls()))
+    url(r'api/snps/', include(SnpResource.urls())),
+    url(r'api/profile/', include(ProfileResource.urls()))
 ]
