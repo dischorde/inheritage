@@ -3,7 +3,7 @@ body{overflow: visible !important;}
 .profile-info-container{
   position: absolute;
   z-index: 1;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 250px;
   background-color: transparent;
@@ -17,13 +17,13 @@ body{overflow: visible !important;}
   width: 100%;
   height: 200px;
   position: relative;
+  top: 50px;
 }
 
 .toggle-side{
   position: absolute;
   top: 7px;
   right: 0;
-  margin: 7px;
   height: 30px;
   width: 30px;
   display: inline-block;
@@ -41,7 +41,13 @@ body{overflow: visible !important;}
   position: relative;
 }
 
-.ethnicity-container{
+.ethnicity-container-0,
+.ethnicity-container-1,
+.ethnicity-container-2,
+.ethnicity-container-3,
+.ethnicity-container-4,
+.ethnicity-container-5,
+.ethnicity-container-6,{
   width:100%;
 }
 
@@ -52,14 +58,16 @@ body{overflow: visible !important;}
   background: -o-linear-gradient(#242424, #191919); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(#242424, #191919); /* For Firefox 3.6 to 15 */
   background: linear-gradient(#242424, #191919);
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
   display: flex;
   justify-content: center;
-  color: white;
+  text-shadow: 1px 1px #6E6D6D;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 25px;
+  font-size: 17px;
   align-items: center;
+  position: relative;
+  text-shadow: 1px 1px #6E6D6D;
 }
 
 .snp-detail{
@@ -67,4 +75,33 @@ body{overflow: visible !important;}
   width: 100%;
   background: white;
   display: none;
+}
+
+
+.ethnicity-container-0{
+  color: #FAB675;
+}
+
+.ethnicity-container-1{
+  color: #779CF5;
+}
+
+.ethnicity-container-2{
+  color: #8FE6FA;
+}
+
+.ethnicity-container-3{
+  color: #F77F80;
+}
+
+.ethnicity-container-4{
+  color: #3CCD70;
+}
+
+.ethnicity-container-5{
+  color: #FAB675;
+}
+
+.ethnicity-container-6{
+  color: #FAB675;
 }
