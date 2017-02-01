@@ -16,12 +16,29 @@ body{overflow: visible !important;}
   opacity: 0.6;
   width: 100%;
   height: 200px;
+  position: relative;
 }
+
+.toggle-side{
+  position: absolute;
+  top: 7px;
+  right: 0;
+  margin: 7px;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+}
+
+.toggle-side i{
+  opacity: 1;
+  color: grey;
+}
+
 
 .genetic-info-container{
   overflow: scroll;
   background: black;
-  /*margin-bottom: -20px;*/
+  position: relative;
 }
 
 .ethnicity-container{
