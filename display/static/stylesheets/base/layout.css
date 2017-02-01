@@ -1,0 +1,19 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+#root > div:first-of-type {
+  height: 100%;
+}
+
+#separator {
+  height: 1px;
+}

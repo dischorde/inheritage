@@ -2,15 +2,21 @@
   font-family: 'Source Sans Pro', sans-serif;
   position: fixed;
   width: 100%;
-  background-color: #3CCD70;
+  background-color: rgba(60, 205, 112, .9);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 2;
 }
 
 #header h1 {
-  padding: 10px 15px;
-  font-size: 150%;
+  padding: 3px 15px;
+}
+
+#header img {
+  height: 35px;
+  width: auto;
+  color: #3CCD70;
 }
 
 #header i {

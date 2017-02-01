@@ -2,6 +2,5 @@ from __future__ import unicode_literals
 
 from django.apps import AppConfig
 
-
-class SrcConfig(AppConfig):
-    name = 'src'
+class DisplayConfig(AppConfig):
+    name = 'display'

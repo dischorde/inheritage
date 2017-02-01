@@ -1,0 +1,173 @@
+#home {
+  height: 100%;
+}
+
+#home-img {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url("https://source.unsplash.com/JuKbaozIo0k/2736x1824");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.typewriter {
+  display: flex;
+  justify-content: center;
+  font-size: 300%;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding-top: 110px;
+}
+
+.typewriter span {
+  font-weight: 600;
+}
+
+@-webkit-keyframes typing { from { width: 0; } }
+@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
+
+.typewriter h1 {
+  font-weight: 300;
+	border-right: .1em solid #3CCD70;
+	/*width: 16.5em;*/
+	width: 12ch;
+	white-space: nowrap;
+	overflow: hidden;
+  letter-spacing: .7px;
+	-webkit-animation: typing 2s steps(30, end),
+	           blink-caret .5s step-end infinite alternate;
+}
+
+#see-more {
+  width: 100%;
+}
+
+#see-more i {
+  width: 100%;
+  position: absolute;
+  bottom: 20px;
+  font-size: 150%;
+  text-align: center;
+}
+
+#see-more p {
+  width: 100%;
+  position: absolute;
+  bottom: 50px;
+  text-transform: uppercase;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align:center;
+}
+
+/* FORM */
+#ethnicity-form-container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: #424647;
+
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+}
+
+#ethnicity-form-container h1 {
+  display: inline-block;
+  text-align: center;
+  font-size: 200%;
+  padding-bottom: 50px;
+}
+
+#ethnicity-form {
+  text-align: center;
+}
+
+#ethnicity-form-name {
+  width: 200px;
+  border-bottom: 2px solid #3CCD70;
+  font-size: 200%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#name-im {
+  padding-left: 15px;
+}
+
+.ethnicity-form-percent {
+  width: 45px;
+  border-bottom: 2px solid #3CCD70;
+  font-size: 130%;
+  margin-right: 5px;
+}
+
+#ethnicity-form .percent {
+  padding-right: 30px;
+  font-size: 120%;
+}
+
+.dropdowns > div:first-of-type {
+  padding-bottom: 20px;
+}
+
+.ethnicities-dropdown {
+  background-color: transparent;
+  border: .5px solid white;
+  color: white;
+  font-weight: 400;
+  font-size: 120%;
+}
+
+.ethnicities-dropdown:hover {
+  cursor: pointer;
+}
+
+.fa-plus-circle {
+  color: #3CCD70;
+  font-size: 200%;
+  padding-top: 10px;
+}
+
+.fa-plus-circle:hover {
+  cursor: pointer;
+}
+
+#ethnicity-form input[type="submit"] {
+  padding-top: 15px;
+}
+
+/* INFO SECTION */
+#more-info {
+  height: 100%;
+  background-image: url("https://source.unsplash.com/31-pOduwZGE/2736x1824");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+#more-info-container {
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+#info-paragraphs {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+#more-info h1 {
+  padding-bottom: 35px;
+  padding-top: 120px;
+  font-size: 180%;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+
+#disclaimer {
+  padding-top: 30px;
+  font-size: 70%;
+}

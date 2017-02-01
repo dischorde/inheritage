@@ -12,15 +12,17 @@ user       | foreign key  | optional (null=true blank=true)
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-profile  |  foreign key |  
-ethncitiy  |  foreign key   |  
-percent |     |  
+profile     |  foreign key |  
+ethncitiy   |  foreign key   |  
+percent     |           |  
 
 ## ethnicities
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-name      |  char field   |  not null
+name        |  char field   |  not null
+lat         |
+log         |
 
 ## sub_populations
 column name | data type | details

@@ -1,0 +1,54 @@
+body{overflow: visible !important;}
+
+.profile-info-container{
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-top{
+  background: black;
+  opacity: 0.6;
+  width: 100%;
+  height: 300px;
+}
+
+.genetic-info-container{
+  overflow: scroll;
+  background: black;
+  margin-bottom: -20px;
+}
+
+.ethnicity-container{
+  width:100%;
+}
+
+.ethnicity-name{
+  height: 60px;
+  width: 100%;
+  background: -webkit-linear-gradient(#242424, #191919); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#242424, #191919); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#242424, #191919); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#242424, #191919);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 25px;
+  align-items: center;
+}
+
+.snp-detail{
+  height: 150px;
+  width: 100%;
+  background: white;
+  display: none;
+}
