@@ -93,10 +93,6 @@
   padding-left: 15px;
 }
 
-.dropdowns > div:first-of-type {
-  padding-bottom: 20px;
-}
-
 .ethnicity-form-percent {
   width: 45px;
   border-bottom: 2px solid #3CCD70;
@@ -107,6 +103,10 @@
 #ethnicity-form .percent {
   padding-right: 30px;
   font-size: 120%;
+}
+
+.dropdowns > div:first-of-type {
+  padding-bottom: 20px;
 }
 
 .ethnicities-dropdown {
@@ -133,4 +133,41 @@
 
 #ethnicity-form input[type="submit"] {
   padding-top: 15px;
+}
+
+/* INFO SECTION */
+#more-info {
+  height: 100%;
+  background-image: url("https://source.unsplash.com/31-pOduwZGE/2736x1824");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+#more-info-container {
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+#info-paragraphs {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+#more-info h1 {
+  padding-bottom: 35px;
+  padding-top: 120px;
+  font-size: 180%;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+
+#disclaimer {
+  padding-top: 30px;
+  font-size: 70%;
 }
