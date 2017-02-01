@@ -10,22 +10,24 @@ class ProfileResource(DjangoResource):
         ethnicities = []
 
         for user_ethnicity in ethnicity_set:
-            snps = []
+            data_points = []
             eth_ids = user_ethnicity.ethnicity_ids()
-            data_points = DataPoint.objects.filter(sub_population_id__in=eth_ids)
-            for dp in data_points:
+            all_dps = DataPoint.objects.filter(sub_population_id__in=eth_ids)
+            for dp in all_dps:
                 dp_detail = {
                     'id': dp.id,
                     'percent': dp.percent,
-                    'name': dp.snp.name,
+                    'specific': dp.sub_population.specific,
+                    'pop_name': dp.sub_population.name,
+                    'snp_name': dp.snp.name,
                     'summary': dp.snp.summary
                 }
-                snps.append(dp_detail)
+                data_points.append(dp_detail)
 
             detail = {
                 'name': user_ethnicity.ethnicity.name,
                 'percent': user_ethnicity.percent,
-                'snps': snps
+                'data_points': data_points
             }
             ethnicities.append(detail)
 
