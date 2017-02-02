@@ -85,6 +85,11 @@ DATABASES = {
     }
 }
 
+# For seeding the database
+FIXTURE_DIRS = (
+   os.path.join(BASE_DIR, 'display', 'fixtures'),
+)
+
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
