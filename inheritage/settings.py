@@ -26,7 +26,8 @@ SECRET_KEY = 'p!(@@y@q1bm6n9v*64sm^uv_1ml*je#4&bzxz+jh5+hp$5#jz$'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'inheritage.herokuapp.com'
+    'inheritage.herokuapp.com',
+    '127.0.0.1'
 ]
 
 
@@ -42,9 +43,10 @@ INSTALLED_APPS = [
     'display'
 ]
 
+# 'whitenoise.middleware.WhiteNoiseMiddleware',
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
