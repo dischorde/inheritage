@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'inheritage.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'inheritage',
-        'USER': 'chlolokatwyn',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'NAME': 'd9vvv0cahgi10',
+        'USER': 'zvsazamxboapfp',
+        'PASSWORD': 'ec7d663f169a0c320238e742e4ef7a5e4d2cface9683683a5613610d983b3a11',
+        'HOST': 'ec2-174-129-223-193.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
