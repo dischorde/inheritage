@@ -68,13 +68,12 @@ class Profile extends React.Component {
 
   render() {
     const data = [
-      {name: '18-24', uv: 31.47, pv: 2400, fill: '#8884d8'},
-      {name: '25-29', uv: 26.69, pv: 4567, fill: '#83a6ed'},
-      {name: '30-34', uv: 15.69, pv: 1398, fill: '#8dd1e1'},
-      {name: '35-39', uv: 8.22, pv: 9800, fill: '#82ca9d'},
-      {name: '40-49', uv: 8.63, pv: 3908, fill: '#a4de6c'},
-      {name: '50+', uv: 2.63, pv: 4800, fill: '#d0ed57'},
-      {name: 'unknow', uv: 6.67, pv: 4800, fill: '#ffc658'}
+      {name: this.state.ethnicities[0].name, uv: 31.47, pv: 2400, fill: '#FAB675'},
+      {name: this.state.ethnicities[1].name, uv: 26.69, pv: 4567, fill: '#779CF5'},
+      {name: this.state.ethnicities[2].name, uv: 15.69, pv: 1398, fill: '#8FE6FA'},
+      {name: this.state.ethnicities[3].name, uv: 8.22, pv: 9800, fill: '#F77F80'},
+      {name: this.state.ethnicities[4].name, uv: 8.63, pv: 3908, fill: '#3CCD70'},
+      {name: this.state.ethnicities[5].name, uv: 2.63, pv: 4800, fill: '#FAB675'}
     ];
 
     const style = {
@@ -94,15 +93,12 @@ class Profile extends React.Component {
               <i className="fa fa-caret-square-o-left fa-2x" aria-hidden="true"></i>
               </div>
                 <div className="profile-chart">
-                  <RadialBarChart width={500} height={300} cx={150} cy={150} innerRadius={20} outerRadius={140} barSize={10} data={data}>
+                  <RadialBarChart width={230} height={180} cx={100} cy={100} innerRadius={10} outerRadius={100} barSize={10} data={data}>
                   <RadialBar minAngle={15} label background clockWise={true} dataKey='uv'/>
-                  <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' wrapperStyle={style}/>
+
                   </RadialBarChart>
                 </div>
-                HIIIIIIIIIII
-                <div className="thisisisisis">
 
-                </div>
           </div>
           { sidebar }
 
@@ -116,3 +112,5 @@ class Profile extends React.Component {
 }
 
 export default Profile;
+
+  // <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' wrapperStyle={style}/>
