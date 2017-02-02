@@ -7,11 +7,69 @@ const _getCoordsObj = latLng => ({
   lng: latLng.lng()
 });
 
-// let _mapOptions = {
-// center: {lat: 37.773972, lng: -122.431297}, // San Francisco coords
-// zoom: 13,
-// mapTypeId: google.maps.MapTypeId.ROADMAP,
-// };
+const _mapOptions = {
+    center: {lat: 35, lng: -30},
+     zoom: 2,
+     minZoom: 2,
+     backgroundColor: "#464646",
+      styles: [
+        {
+        featureType: 'water',
+        elementType: 'geometry',
+        stylers: [{color: '#424647'}]
+      }, {
+    featureType: "landscape",
+    elementType: "geometry",
+    stylers: [
+      { hue: "#B6B6B6" ,
+      color: "#B6B6B6"}
+    ]
+  } ,  {
+     featureType: "administrative",
+     elementType: "geometry.fill",
+     stylers: [
+        { visibility: "off" }
+     ]
+   },
+          {
+    featureType: "administrative",
+    elementType: "labels",
+    stylers: [
+      { visibility: "off" }
+      ]
+    },
+    {
+    featureType: "administrative",
+    elementType: "geometry.stroke",
+    stylers: [
+        { visibility: "off" }
+    ]
+  },  {
+    featureType: "landscape",
+    stylers: [
+        {
+          "visibility": "off"
+        }
+    ]
+  },
+  {
+    featureType: "water",
+    stylers: [
+        {
+            "visibility": "on"
+        },
+        {
+            "lightness": -98
+        }, {
+          color: '#212121'} ]
+  }, {
+  featureType: "poi",
+  stylers: [{ visibility: "off" }]
+  } ,
+   { featureType: "road",
+     stylers: [{ visibility: "off" } ] }
+  ]
+  };
 
 class Map extends React.Component {
   constructor(props) {
@@ -19,79 +77,17 @@ class Map extends React.Component {
     this.state = {
       markers: [],
       modalOpen: false,
-      _mapOptions : {
-        center: {lat: 35, lng: -30},
-  	     zoom: 2,
-  	     minZoom: 2,
-         backgroundColor: "#464646",
-          styles: [
-            {
-            featureType: 'water',
-            elementType: 'geometry',
-            stylers: [{color: '#424647'}]
-          }, {
-        featureType: "landscape",
-        elementType: "geometry",
-        stylers: [
-          { hue: "#B6B6B6" ,
-          color: "#B6B6B6"}
-        ]
-      } ,  {
-         featureType: "administrative",
-         elementType: "geometry.fill",
-         stylers: [
-            { visibility: "off" }
-         ]
-       },
-              {
-        featureType: "administrative",
-        elementType: "labels",
-        stylers: [
-          { visibility: "off" }
-          ]
-        },
-        {
-        featureType: "administrative",
-        elementType: "geometry.stroke",
-        stylers: [
-            { visibility: "off" }
-        ]
-      },  {
-        featureType: "landscape",
-        stylers: [
-            {
-              "visibility": "off"
-            }
-        ]
-    },
-    {
-        featureType: "water",
-        stylers: [
-            {
-                "visibility": "on"
-            },
-            {
-                "lightness": -98
-            }, {
-              color: '#212121'} ]
-      }, {
-      featureType: "poi",
-      stylers: [{ visibility: "off" }]
-      } ,
-       { featureType: "road",
-         stylers: [{ visibility: "off" } ] }
-    ]
-    }
-  };
+      currentEth: ""
+    };
     this._onModalClose = this._onModalClose.bind(this);
-  this.setMarkers = this.setMarkers.bind(this);
-  this.addMarkersWithTimeOut = this.addMarkersWithTimeOut.bind(this);
+    this.setMarkers = this.setMarkers.bind(this);
+    this.addMarkersWithTimeOut = this.addMarkersWithTimeOut.bind(this);
 }
 
 
 componentDidMount() {
   const map = this.refs.map;
-  this.map = new google.maps.Map(map, this.state._mapOptions);
+  this.map = new google.maps.Map(map, _mapOptions);
 
   this.setMarkers(this.map);
 }
@@ -114,11 +110,11 @@ setMarkers(map) {
   for(let i=0; i < this.props.ethnicities.length; i++){
     let lat = this.props.ethnicities[i].lat;
     let long = this.props.ethnicities[i].long;
-    this.addMarkersWithTimeOut(map, lat, long, i * 500);
+    this.addMarkersWithTimeOut(this.props.ethnicities[i], map, lat, long, i * 500);
 
   }
 }
-addMarkersWithTimeOut(map, lat, long, timeout) {
+addMarkersWithTimeOut(ethnicity, map, lat, long, timeout) {
   var markers = [];
     setTimeout(() => {
         let that = this;
@@ -128,7 +124,7 @@ addMarkersWithTimeOut(map, lat, long, timeout) {
          animation: google.maps.Animation.DROP
        });
       google.maps.event.addListener(marker, 'click', function() {
-        that.setState({modalOpen: true});
+        that.setState({modalOpen: true, currentEth: ethnicity});
       });
     });
   }
@@ -136,6 +132,8 @@ addMarkersWithTimeOut(map, lat, long, timeout) {
 
 
   render() {
+    console.log(this.state);
+    console.log(this.props);
     return (
       <div className="map" ref="map">Map
         <Modal
@@ -143,7 +141,15 @@ addMarkersWithTimeOut(map, lat, long, timeout) {
            onRequestClose={this._onModalClose}
            onAfterOpen={this.onModalOpen}
            contentLabel="Modal"
-           style={customStyles}>I'm a Modal!</Modal>
+           style={customStyles}>
+           <div className="modal-div">
+             <div className="inner-modal-div">
+               <div className="modal-eth-name">
+                 <h1>{this.state.currentEth.name}</h1>
+               </div>
+             </div>
+           </div>
+        </Modal>
       </div>
     );
   }

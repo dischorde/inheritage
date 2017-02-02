@@ -8,39 +8,50 @@ class Profile extends React.Component {
     super(props);
     this.ethnicityInfo = this.ethnicityInfo.bind(this);
     this.ethnicityContainer = this.ethnicityContainer.bind(this);
-    // this.barChart = this.barChart.bind(this);
     this.state = {
       ethnicities: [
-        {name: "italian",
-          percent: "30%",
-          lat: 41.9028,
-            long: 12.4964},
-          {name: "irish",
-            percent: "20%",
+        { name: "South East Asian",
+          percent: 50,
+          lat: 12.222,
+          long: 46.100,
+            data_points: [
+              {
+                snp_name: "rs713598",
+                percent: 34,
+                summary: "Possibly unalbe to taste bitter foods",
+                specific: false,
+                pop_name: "South East Asian",
+                id: 2
+              }
+            ]},
+            {  name: "European",
+                percent: 50,
+                lat: 69.200,
+                long: 70.300,
+                  data_points: [
+                    {
+                      snp_name: "rs713598",
+                      percent: 42,
+                      summary: "Definitely taste bitter foods",
+                      specific: false,
+                      pop_name: "South East Asian",
+                      id: 2
+                    }
+                  ]},
+          { name: "irish",
+            percent: 50,
             lat: 53.3498,
-              long: 6.2603},
+              long: 6.2603,
+              data_points: []},
               {name: "german",
-                  percent: "10%",
+                  percent: 10,
                   lat: 51.1657,
-                    long:  10.4515},
-                    {name: "Scotish",
-                        percent: "10%",
-                        lat: 56.4907 ,
-                          long: 4.2026},
-                        {name: "Dutch",
-                          percent: "10%",
-                          lat: 52.1326,
-                            long: 5.2913},
-                          {name: "Japanese",
-                            percent: "10%",
-                            lat: 36.2048,
-                              long: 138.2529}
-
+                    long:  10.4515}
                   ],
-                  name: "Cholo Katwyn"
-
-    };
-  }
+                  name: "Cholo Katwyn",
+                  profileId: 1
+            };
+          }
 
   ethnicityInfo() {
     return this.state.ethnicities.map(function(ethnicity, idx){
@@ -73,8 +84,6 @@ class Profile extends React.Component {
       {name: this.state.ethnicities[1].name, uv: 26.69, pv: 4567, fill: '#779CF5'},
       {name: this.state.ethnicities[2].name, uv: 15.69, pv: 1398, fill: '#8FE6FA'},
       {name: this.state.ethnicities[3].name, uv: 8.22, pv: 9800, fill: '#F77F80'},
-      {name: this.state.ethnicities[4].name, uv: 8.63, pv: 3908, fill: '#3CCD70'},
-      {name: this.state.ethnicities[5].name, uv: 2.63, pv: 4800, fill: '#FAB675'}
     ];
 
     const style = {
