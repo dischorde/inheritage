@@ -6,6 +6,7 @@ import pdb
 
 class ProfileResource(DjangoResource):
     def is_authenticated(self):
+        # TODO: Figure out how to authenticate
         # Open everything wide!
         # DANGEROUS, DO NOT DO IN PRODUCTION.
         return True
@@ -58,12 +59,12 @@ class ProfileResource(DjangoResource):
             name=self.data['name']
         )
 
-        for eth in self.data['ethinicities']:
-            ethnicity = Ethnicity.objects.get(id=eth.id)
+        for eth in self.data['ethnicities']:
+            ethnicity = Ethnicity.objects.get(id=eth['id'])
             UserEthnicity.objects.create(
                 profile=new_profile,
                 ethnicity=ethnicity,
-                percent=eth.percent
+                percent=eth['percent']
             )
 
-        return new_profile
+        return new_profile.id

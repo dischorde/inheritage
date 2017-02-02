@@ -9,6 +9,6 @@ export const createProfile = (data) => (
   $.ajax({
     method: 'POST',
     url: `/api/profiles/`,
-    data: data
+    data: JSON.stringify(data)
   })
 );
