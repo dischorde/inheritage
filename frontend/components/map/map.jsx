@@ -1,4 +1,6 @@
 import React from 'react';
+import Modal from 'react-modal';
+import {customStyles} from './modal_style';
 
 const _getCoordsObj = latLng => ({
   lat: latLng.lat(),
@@ -15,6 +17,8 @@ class Map extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      markers: [],
+      modalOpen: false,
       _mapOptions : {
         center: {lat: 35, lng: -30},
   	     zoom: 2,
@@ -79,6 +83,7 @@ class Map extends React.Component {
     ]
     }
   };
+    this._onModalClose = this._onModalClose.bind(this);
   this.setMarkers = this.setMarkers.bind(this);
   this.addMarkersWithTimeOut = this.addMarkersWithTimeOut.bind(this);
 }
@@ -87,37 +92,60 @@ class Map extends React.Component {
 componentDidMount() {
   const map = this.refs.map;
   this.map = new google.maps.Map(map, this.state._mapOptions);
-  
+
   this.setMarkers(this.map);
 }
+
+componentWillMount() {
+    Modal.setAppElement('body');
+ }
+
+
+  _onModalClose() {
+    this.setState({modalOpen: false });
+    customStyles.content.opacity = 0;
+  }
+
+  onModalOpen() {
+    customStyles.content.opacity = 100;
+  }
 
 setMarkers(map) {
   for(let i=0; i < this.props.ethnicities.length; i++){
     let lat = this.props.ethnicities[i].lat;
     let long = this.props.ethnicities[i].long;
-    this.addMarkersWithTimeOut(map, lat, long, i * 400);
+    this.addMarkersWithTimeOut(map, lat, long, i * 500);
 
   }
 }
 addMarkersWithTimeOut(map, lat, long, timeout) {
   var markers = [];
-    window.setTimeout(function() {
-         markers.push(new google.maps.Marker({
-           position: {lat: lat, lng: long},
-           map: map,
-           animation: google.maps.Animation.DROP
-         }));
-       }, timeout);
+    setTimeout(() => {
+        let that = this;
+       var marker = new google.maps.Marker({
+         position: {lat: lat, lng: long},
+         map: map,
+         animation: google.maps.Animation.DROP
+       });
+      google.maps.event.addListener(marker, 'click', function() {
+        that.setState({modalOpen: true});
+      });
+    });
   }
 
-  _registerListeners() {
-    google.maps.event.addListener(map, 'click', function(event){
-          this.setOptions({scrollwheel:true});
-        });
-  }
+
 
   render() {
-    return <div className="map" ref="map">Map</div>;
+    return (
+      <div className="map" ref="map">Map
+        <Modal
+           isOpen={this.state.modalOpen}
+           onRequestClose={this._onModalClose}
+           onAfterOpen={this.onModalOpen}
+           contentLabel="Modal"
+           style={customStyles}>I'm a Modal!</Modal>
+      </div>
+    );
   }
 
 }
@@ -145,3 +173,16 @@ export default Map;
 //        map: map,
 //        title: 'Hello World!'
 //      });
+
+// addMarkersWithTimeOut(map, lat, long, timeout) {
+//   var markers = [];
+//     window.setTimeout(function() {
+//          markers.push(new google.maps.Marker({
+//            position: {lat: lat, lng: long},
+//            map: map,
+//            animation: google.maps.Animation.DROP
+//          }));
+//        }, timeout);
+//   }
+//
+//

@@ -20,17 +20,44 @@ body{overflow: visible !important;}
   top: 50px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-content: center;
 }
 
-.profile-chart{
-  height: 100%;
+.recharts-surface {
   width: 100%;
 }
 
 .recharts-wrapper{
-  margin-top: 30px;
-  margin-left: 26px;
+  margin: 0;
+}
+
+.user-name {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  color: white;
+  text-shadow: 1px 1px #6E6D6D;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.user-name h1{
+  display: inline-block;
+}
+
+.profile-chart{
+  height: 120;
+  margin-top: 10px;
+  width: 230;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+.recharts-wrapper{
+  margin-left: 28px;
 }
 
 .toggle-side{

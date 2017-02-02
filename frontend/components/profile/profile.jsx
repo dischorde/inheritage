@@ -36,7 +36,8 @@ class Profile extends React.Component {
                             lat: 36.2048,
                               long: 138.2529}
 
-                  ]
+                  ],
+                  name: "Cholo Katwyn"
 
     };
   }
@@ -93,10 +94,12 @@ class Profile extends React.Component {
               <i className="fa fa-caret-square-o-left fa-2x" aria-hidden="true"></i>
               </div>
                 <div className="profile-chart">
-                  <RadialBarChart width={230} height={180} cx={100} cy={100} innerRadius={10} outerRadius={100} barSize={10} data={data}>
+                  <RadialBarChart width={230} height={100} cx={100} cy={100} innerRadius={10} outerRadius={100} barSize={10} data={data}>
                   <RadialBar minAngle={15} label background clockWise={true} dataKey='uv'/>
-
                   </RadialBarChart>
+                </div>
+                <div className="user-name">
+                  <h1>{this.state.name}</h1>
                 </div>
 
           </div>
