@@ -105,3 +105,13 @@ body{overflow: visible !important;}
 .ethnicity-container-6{
   color: #FAB675;
 }
+
+#container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+}
