@@ -103,7 +103,7 @@ class EthnicityForm extends React.Component {
           className="fa fa-plus-circle"
           aria-hidden="true">
         </i>
-        <br></br>
+        <br></br><br></br>
         <input type="submit" value="SUBMIT"></input>
       </form>
     );

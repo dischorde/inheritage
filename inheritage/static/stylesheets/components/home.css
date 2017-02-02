@@ -124,7 +124,7 @@
 .fa-plus-circle {
   color: #3CCD70;
   font-size: 200%;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 
 .fa-plus-circle:hover {
@@ -132,12 +132,11 @@
 }
 
 #ethnicity-form input[type="submit"] {
-  padding-top: 15px;
+  margin-top: 20px;
 }
 
 /* INFO SECTION */
 #more-info {
-  height: 100%;
   background-image: url("https://source.unsplash.com/31-pOduwZGE/2736x1824");
   background-size: cover;
   background-position: center;
@@ -148,7 +147,6 @@
 }
 
 #more-info-container {
-  height: 100%;
   background-color: rgba(0, 0, 0, .5);
 }
 
@@ -160,7 +158,7 @@
 
 #more-info h1 {
   padding-bottom: 35px;
-  padding-top: 120px;
+  padding-top: 5%;
   font-size: 180%;
   text-transform: uppercase;
   font-weight: 600;
