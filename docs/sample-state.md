@@ -18,6 +18,7 @@
         {
           id: 1,
           name: "rs1234",
+          percent: "43",
           summary: "can’t taste bitterness"
         }
       ]
