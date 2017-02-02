@@ -21,7 +21,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 name        |  char field   |  not null
-lat         | 
+lat         |
 log         |
 
 ## sub_populations
@@ -34,7 +34,8 @@ specific	| boolean field | not null
 ## data_points
 column name | data type | details
 ------------|-----------|-----------------------
-id          | integer   | not null, primary key      	sub_population | foreign key |
+id          | integer   | not null, primary key
+sub_population | foreign key |
 snp | foreign key |
 percent | integer | not null  
 
