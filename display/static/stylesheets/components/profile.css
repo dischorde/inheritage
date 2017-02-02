@@ -30,7 +30,7 @@ body{overflow: visible !important;}
 
 .recharts-wrapper{
   margin-top: 30px;
-  margin-left: 27px;
+  margin-left: 26px;
 }
 
 .toggle-side{
@@ -53,6 +53,7 @@ body{overflow: visible !important;}
   overflow: scroll;
   background: black;
   position: relative;
+  top: 50px;
 }
 
 .ethnicity-container-0,
