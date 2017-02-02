@@ -17,7 +17,6 @@ class Home extends React.Component {
         <div id="ethnicity-form-container">
           <EthnicityFormContainer />
         </div>
-        <a name="info"></a>
         <div id="more-info">
           <div id="more-info-container">
             <h1>Ethnic Diversity</h1>
