@@ -2,9 +2,14 @@ from restless.dj import DjangoResource
 
 from display.models import *
 from django.contrib.auth.models import User
-
+import pdb
 
 class ProfileResource(DjangoResource):
+    def is_authenticated(self):
+        # Open everything wide!
+        # DANGEROUS, DO NOT DO IN PRODUCTION.
+        return True
+
     def detail(self, pk):
         profile = Profile.objects.get(id=pk)
         ethnicity_set = profile.userethnicity_set.all()
@@ -43,7 +48,7 @@ class ProfileResource(DjangoResource):
     def create(self):
         current_user = None
         try:
-            id = data['user_id']
+            id = self.data['user_id']
             current_user = User.objects.get(id=id)
         except (KeyError, User.DoesNotExist):
             pass
@@ -53,7 +58,7 @@ class ProfileResource(DjangoResource):
             name=self.data['name']
         )
 
-        for eth in data['ethinicities']:
+        for eth in self.data['ethinicities']:
             ethnicity = Ethnicity.objects.get(id=eth.id)
             UserEthnicity.objects.create(
                 profile=new_profile,
