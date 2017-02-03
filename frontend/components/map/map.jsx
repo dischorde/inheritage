@@ -81,12 +81,47 @@ class Map extends React.Component {
       currentEth: "",
       zoom: ""
     };
+    this.snpDataPoints = this.snpDataPoints.bind(this);
     this.zoomMap = this.zoomMap.bind(this);
     this._onModalClose = this._onModalClose.bind(this);
     this.setMarkers = this.setMarkers.bind(this);
     this.addMarkersWithTimeOut = this.addMarkersWithTimeOut.bind(this);
 }
 
+
+  snpDataPoints() {
+    let ethnicity = this.state.currentEth;
+    if ( ethnicity.data_points !== undefined) {
+      return ethnicity.data_points.map(function(data, idx) {
+        return(
+          <div className="snp-detail" key={idx}>
+            <i className="fa fa-circle" aria-hidden="true"></i>
+            <div className="snp-detail-inner">
+              <div className="snp-ref">
+                <h1 className="snp">
+                  SNP:</h1><h1>{data.snp_name}</h1>
+              </div>
+              <div className="snp-info">
+                <div className="snp-percent">
+                  <h1>
+                    Susceptibility: {`${data.percent}`}%
+                  </h1>
+                </div>
+                <div className="snp-summary">
+                  Likely to: {data.summary}
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      });
+    } else {
+      return (
+        <div className="snp-detail">
+        </div>
+      );
+    }
+  }
 
 componentDidMount() {
   const map = this.refs.map;
@@ -99,6 +134,7 @@ componentDidUpdate() {
   if (this.props.zoom !== "") {
     this.zoomMap(this.state.zoom);
   }
+  this.snpDataPoints();
 }
 
 componentWillMount() {
@@ -149,6 +185,8 @@ addMarkersWithTimeOut(ethnicity, map, lat, long, timeout) {
   render() {
     console.log(this.state);
     console.log(this.props);
+    let ethInfo = this.snpDataPoints();
+
     return (
       <div className="map" ref="map">Map
         <Modal
@@ -161,6 +199,9 @@ addMarkersWithTimeOut(ethnicity, map, lat, long, timeout) {
              <div className="inner-modal-div">
                <div className="modal-eth-name">
                  <h1>{this.state.currentEth.name}</h1>
+               </div>
+               <div>
+                 {ethInfo}
                </div>
              </div>
            </div>

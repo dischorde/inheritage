@@ -74,7 +74,6 @@ class EthnicityForm extends React.Component {
   }
 
   render() {
-    debugger
 
     return(
       <form id="ethnicity-form">

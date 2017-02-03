@@ -29,6 +29,7 @@
   margin-left: 20px;
 }
 
+
 .modal-eth-name{
   font-size: 20px;
   font-family: 'Source Sans Pro', sans-serif;
@@ -41,4 +42,39 @@
 
 .modal-eth-name h1{
   display: inline-block;
+  color: #424647;
+}
+
+.snp-detail{
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-bottom: 1px solid #FBFBFB;
+  color: rgba(66, 70, 71, 0.71);
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.snp{
+  display: inline-block;
+  padding-right: 7px;
+}
+.snp-ref{
+  display: flex;
+  font-size: 17px;
+  margin-bottom: 1px;
+}
+
+.snp-info{
+  font-size: 15px;
+}
+
+.snp-detail i{
+  color: #8FE6FA;
+  position: absolute;
+  padding-left: 5px;
+  padding-top: 2px;
+}
+
+.snp-detail-inner{
+  margin-left: 25px;
 }

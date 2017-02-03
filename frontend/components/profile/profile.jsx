@@ -55,6 +55,12 @@ class Profile extends React.Component {
             };
           }
 
+  // componentDidMount() {
+  //   this.props.fetchProfile();
+  // }
+
+
+
   ethnicityInfo() {
     let that = this;
     return this.state.ethnicities.map(function(ethnicity, idx){
@@ -63,9 +69,6 @@ class Profile extends React.Component {
         <div className={ethnicities} key={idx}>
           <div className="ethnicity-name" onClick={()=> that.zoomMap(ethnicity)}>
                 {ethnicity.name}
-            </div>
-            <div className="snp-detail">
-
             </div>
           </div>
       );
