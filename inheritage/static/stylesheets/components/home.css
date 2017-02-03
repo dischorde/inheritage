@@ -153,12 +153,12 @@
 #info-paragraphs {
   width: 50%;
   margin: 0 auto;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 
 #more-info h1 {
-  padding-bottom: 35px;
-  padding-top: 5%;
+  padding-top: 100px;
+  padding-bottom: 30px;
   font-size: 180%;
   text-transform: uppercase;
   font-weight: 600;

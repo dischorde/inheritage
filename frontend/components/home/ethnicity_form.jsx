@@ -25,9 +25,7 @@ class EthnicityForm extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestEthnicities().then(data => {
-      console.log(data);
-    });
+    this.props.requestEthnicities();
   }
 
   handleAddInput() {
