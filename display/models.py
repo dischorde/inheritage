@@ -23,6 +23,9 @@ class DataPoint(models.Model):
     sub_population = models.ForeignKey(SubPopulation, null=False)
     percent = models.IntegerField(null=False)
 
+    class Meta:
+        unique_together = ("snp", "sub_population")
+
 class Ethnicity(models.Model):
     name = models.CharField(max_length=255, null=False)
     lat = models.DecimalField(max_digits=9, decimal_places=6)
