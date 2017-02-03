@@ -74,7 +74,7 @@
   display: inline-block;
   text-align: center;
   font-size: 200%;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 
 #ethnicity-form {
@@ -133,6 +133,10 @@
 
 #ethnicity-form input[type="submit"] {
   margin-top: 20px;
+}
+
+#ethnicity-errors {
+  padding-bottom: 30px;
 }
 
 /* INFO SECTION */

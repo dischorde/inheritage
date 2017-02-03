@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class EthnicityForm extends React.Component {
   constructor(props) {
@@ -11,26 +12,60 @@ class EthnicityForm extends React.Component {
       percent4: 0,
       percent5: 0,
       percent6: 0,
-      ethnicity1: "",
-      ethnicity2: "",
-      ethnicity3: "",
-      ethnicity4: "",
-      ethnicity5: "",
-      ethnicity6: ""
+      ethnicity1: null,
+      ethnicity2: null,
+      ethnicity3: null,
+      ethnicity4: null,
+      ethnicity5: null,
+      ethnicity6: null,
+      errors: ""
     };
     this.handleAddInput = this.handleAddInput.bind(this);
     this.handlePercentChange = this.handlePercentChange.bind(this);
     this.handleEthnicityChange = this.handleEthnicityChange.bind(this);
     this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
     this.props.requestEthnicities();
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    if (this.state.name === "") {
+      this.setState({ errors: "please enter your name" });
+      return;
+    }
+    const numEthnicities = $(".dropdowns").children().length;
+    const ethnicities = [];
+    for (let i = 1; i <= numEthnicities; i++) {
+      if (isNaN(this.state[`percent${i}`])) {
+        this.setState({ errors: "please enter number values for the percents" });
+        return;
+      }
+      ethnicities.push(
+        {
+          percent: this.state[`percent${i}`],
+          id: this.state[`ethnicity${i}`]
+        }
+      );
+    }
+    const profile = {
+      name: this.state.name,
+      ethnicities
+    };
+
+
+    this.props.createProfile(profile).then((data) => {
+      console.log(data);
+      this.props.router.push(`/profile/${data.profile}`);
+    });
+  }
+
   handleAddInput() {
     const options = (this.props.ethnicities).map(ethnicity => (
-      `<option key=${ethnicity.id} value=${ethnicity.name}>${ethnicity.name}</option>`
+      `<option key=${ethnicity.id} value=${ethnicity.id}>${ethnicity.name}</option>`
     ));
 
     const numEthnicities = $(".dropdowns");
@@ -82,6 +117,7 @@ class EthnicityForm extends React.Component {
         </input>
         <h1>.</h1>
         <h1 id="name-im">I'm...</h1>
+        <p id="ethnicity-errors">{this.state.errors}</p>
         <div className="dropdowns">
           <div id="dropdown-1">
             <input
@@ -96,7 +132,7 @@ class EthnicityForm extends React.Component {
               id="ethnicity1">
               <option selected="selected" disabled>ethnicity</option>
               {this.props.ethnicities.map(ethnicity => (
-                <option key={ethnicity.id} value={ethnicity.name}>{ethnicity.name}</option>
+                <option key={ethnicity.id} value={ethnicity.id}>{ethnicity.name}</option>
               ))}
             </select>
             <br></br>
@@ -108,10 +144,13 @@ class EthnicityForm extends React.Component {
           aria-hidden="true">
         </i>
         <br></br><br></br>
-        <input type="submit" value="SUBMIT"></input>
+        <input
+          onClick={this.handleSubmit}
+          type="submit"
+          value="SUBMIT"></input>
       </form>
     );
   }
 }
 
-export default EthnicityForm;
+export default withRouter(EthnicityForm);
