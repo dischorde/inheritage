@@ -29,6 +29,10 @@ class EthnicityForm extends React.Component {
   }
 
   handleAddInput() {
+    const options = (this.props.ethnicities).map(ethnicity => (
+      `<option key=${ethnicity.id} value=${ethnicity.name}>${ethnicity.name}</option>`
+    ));
+
     const numEthnicities = $(".dropdowns");
     const fieldNum = numEthnicities.children().length + 1;
     if (fieldNum === 6) {
@@ -45,10 +49,7 @@ class EthnicityForm extends React.Component {
           class="ethnicities-dropdown"
           id="ethnicity${fieldNum}">
           <option selected disabled>ethnicity</option>
-          <option value="italian">Italian</option>
-          <option value="french">French</option>
-          <option value="spanish">Spanish</option>
-          <option value="scottish">Scottish</option>
+          ${options}
         </select>
         <br></br>
       </div>`
@@ -68,11 +69,10 @@ class EthnicityForm extends React.Component {
 
   handleNameChange(e) {
     this.setState({ name: e.target.value });
-    console.log(this.state);
   }
 
   render() {
-
+    // debugger
     return(
       <form id="ethnicity-form">
         <h1>My name is</h1>
@@ -94,11 +94,10 @@ class EthnicityForm extends React.Component {
               onChange={this.handleEthnicityChange}
               className="ethnicities-dropdown"
               id="ethnicity1">
-              <option selected disabled>ethnicity</option>
-              <option value="italian">Italian</option>
-              <option value="french">French</option>
-              <option value="spanish">Spanish</option>
-              <option value="scottish">Scottish</option>
+              <option selected="selected" disabled>ethnicity</option>
+              {this.props.ethnicities.map(ethnicity => (
+                <option key={ethnicity.id} value={ethnicity.name}>{ethnicity.name}</option>
+              ))}
             </select>
             <br></br>
           </div>

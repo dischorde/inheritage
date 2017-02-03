@@ -1,4 +1,4 @@
-import RECEIVE_ETHNICITIES from '../actions/ethnicity_actions';
+import { RECEIVE_ETHNICITIES } from '../actions/ethnicity_actions';
 
 const ethnicityReducer = (oldState = [], action) => {
   Object.freeze(oldState);
