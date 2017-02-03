@@ -4,6 +4,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import HeaderContainer from './header/header_container';
 import HomeContainer from './home/home_container';
 import ProfileContainer from './profile/profile_container';
+import SnpDetailContainer from './snp/snp_detail_container';
 
 const Root = ({store}) => {
   return (
@@ -12,6 +13,7 @@ const Root = ({store}) => {
         <Route path="" component={HeaderContainer}>
           <Route path="/" component={HomeContainer}></Route>
           <Route path="/profile" component={ProfileContainer}></Route>
+          <Route path="/snp/:snpId" component={SnpDetailContainer}></Route>
           // more here
         </Route>
       </ Router>

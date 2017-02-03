@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -25,7 +25,10 @@ SECRET_KEY = 'p!(@@y@q1bm6n9v*64sm^uv_1ml*je#4&bzxz+jh5+hp$5#jz$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'inheritage.herokuapp.com',
+    '127.0.0.1'
+]
 
 
 # Application definition
@@ -39,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'display'
 ]
+
+# 'whitenoise.middleware.WhiteNoiseMiddleware',
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -77,11 +82,11 @@ WSGI_APPLICATION = 'inheritage.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'inheritage',
-        'USER': 'chlolokatwyn',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'd9vvv0cahgi10',
+        'USER': 'zvsazamxboapfp',
+        'PASSWORD': 'ec7d663f169a0c320238e742e4ef7a5e4d2cface9683683a5613610d983b3a11',
+        'HOST': 'ec2-174-129-223-193.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -121,8 +126,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+# STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'inheritage', 'static'),
 )
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
