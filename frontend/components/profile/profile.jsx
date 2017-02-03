@@ -9,7 +9,6 @@ class Profile extends React.Component {
     this.zoomMap = this.zoomMap.bind(this);
     this.ethnicityInfo = this.ethnicityInfo.bind(this);
     this.ethnicityContainer = this.ethnicityContainer.bind(this);
-    this.snpDataPoints = this.snpDataPoints.bind(this);
     this.state = {
       zoom: "",
       ethnicities: [
@@ -60,46 +59,20 @@ class Profile extends React.Component {
   //   this.props.fetchProfile();
   // }
 
-  snpDataPoints(ethnicity) {
-    debugger
-    return ethnicity.data_points.map(function(data, idx) {
-      return(
-        <div className="snp-detail">
-          <div className="snp-ref">
-            <h1>
-              {data.snp_name}
-            </h1>
-          </div>
-          <div className="snp-info">
-            <div className="snp-percent">
-              <h1>
-                Likely to be homozygous for SNP: `${data.percent}`
-              </h1>
-            </div>
-            <div className="snp-info">
-              {data.summary}
-            </div>
-          </div>
-        </div>
-      );
-    });
-  }
 
 
   ethnicityInfo() {
     let that = this;
     return this.state.ethnicities.map(function(ethnicity, idx){
       var ethnicities = `ethnicity-container-${idx}`;
-      let ethInfo = that.snpDataPoints(ethnicity);
       return (
         <div className={ethnicities} key={idx}>
           <div className="ethnicity-name" onClick={()=> that.zoomMap(ethnicity)}>
                 {ethnicity.name}
             </div>
-            {ethInfo}
           </div>
       );
-    }).bind(this);
+    });
   }
 
   zoomMap(ethnicity) {
