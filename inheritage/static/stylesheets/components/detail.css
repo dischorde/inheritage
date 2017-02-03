@@ -1,0 +1,25 @@
+#snp-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 140px 0px 140px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.snp-detail-description {
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.snp-detail-description h1 {
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.snp-detail-description p {
+  font-size: 17px;
+  font-weight: 300;
+}
