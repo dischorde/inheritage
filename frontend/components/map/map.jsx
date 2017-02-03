@@ -75,10 +75,13 @@ class Map extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      map: {},
       markers: [],
       modalOpen: false,
-      currentEth: ""
+      currentEth: "",
+      zoom: ""
     };
+    this.zoomMap = this.zoomMap.bind(this);
     this._onModalClose = this._onModalClose.bind(this);
     this.setMarkers = this.setMarkers.bind(this);
     this.addMarkersWithTimeOut = this.addMarkersWithTimeOut.bind(this);
@@ -88,8 +91,14 @@ class Map extends React.Component {
 componentDidMount() {
   const map = this.refs.map;
   this.map = new google.maps.Map(map, _mapOptions);
-
   this.setMarkers(this.map);
+  this.setState({map: this.map});
+}
+
+componentDidUpdate() {
+  if (this.props.zoom !== "") {
+    this.zoomMap(this.state.zoom);
+  }
 }
 
 componentWillMount() {
@@ -129,6 +138,12 @@ addMarkersWithTimeOut(ethnicity, map, lat, long, timeout) {
     });
   }
 
+  zoomMap(ethnicity) {
+    let lat = ethnicity.lat;
+    let long = ethnicity.long;
+    this.state.map.setZoom(4);
+    this.state.map.setCenter(lat, long);
+  }
 
 
   render() {
