@@ -77,7 +77,6 @@ body{overflow: visible !important;}
 
 
 .genetic-info-container{
-  overflow: scroll;
   background: black;
   position: relative;
   top: 50px;
