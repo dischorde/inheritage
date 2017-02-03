@@ -24,6 +24,12 @@ class EthnicityForm extends React.Component {
     this.handleNameChange = this.handleNameChange.bind(this);
   }
 
+  componentDidMount() {
+    this.props.requestEthnicities().then(data => {
+      console.log(data);
+    });
+  }
+
   handleAddInput() {
     const numEthnicities = $(".dropdowns");
     const fieldNum = numEthnicities.children().length + 1;
@@ -68,6 +74,8 @@ class EthnicityForm extends React.Component {
   }
 
   render() {
+    debugger
+
     return(
       <form id="ethnicity-form">
         <h1>My name is</h1>
