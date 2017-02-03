@@ -16,7 +16,7 @@ class SubPopulation(models.Model):
     code = models.CharField(max_length=5,null=False)
     specific = models.BooleanField(null=False)
     def __str__(self):
-        return self.name
+        return self.code
 
 class DataPoint(models.Model):
     snp = models.ForeignKey(Snp, null=False)
