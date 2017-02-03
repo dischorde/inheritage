@@ -28,7 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'inheritage.herokuapp.com',
-    '127.0.0.1'
+    '127.0.0.1',
+    'localhost'
 ]
 
 
@@ -81,7 +82,7 @@ WSGI_APPLICATION = 'inheritage.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default='postgres://localhost')
+    'default': dj_database_url.config(default='postgres://chlolokatwyn@localhost/inheritage')
 }
 
 db_from_env = dj_database_url.config(conn_max_age=500)
