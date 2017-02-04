@@ -155,23 +155,30 @@ setMarkers(map) {
   for(let i=0; i < this.props.ethnicities.length; i++){
     let lat = this.props.ethnicities[i].lat;
     let long = this.props.ethnicities[i].long;
+    debugger
     this.addMarkersWithTimeOut(this.props.ethnicities[i], map, lat, long, i * 500);
-
   }
 }
 addMarkersWithTimeOut(ethnicity, map, lat, long, timeout) {
   var markers = [];
-    setTimeout(() => {
-        let that = this;
-       var marker = new google.maps.Marker({
-         position: {lat: lat, lng: long},
-         map: map,
-         animation: google.maps.Animation.DROP
-       });
-      google.maps.event.addListener(marker, 'click', function() {
-        that.setState({modalOpen: true, currentEth: ethnicity});
-      });
+  let latLng = new google.maps.LatLng(lat, long)
+  setTimeout(() => {
+    let that = this;
+
+    var marker = new google.maps.Marker({
+       position: latLng,
+       map,
+       animation: google.maps.Animation.DROP,
+       visibile: true
+     });
+
+    google.maps.event.addListener(marker, 'click', function() {
+      that.setState({modalOpen: true, currentEth: ethnicity});
     });
+    markers.push(marker);
+    debugger
+    }, timeout);
+
   }
 
   zoomMap(ethnicity) {
@@ -186,7 +193,6 @@ addMarkersWithTimeOut(ethnicity, map, lat, long, timeout) {
     console.log(this.state);
     console.log(this.props);
     let ethInfo = this.snpDataPoints();
-
     return (
       <div className="map" ref="map">Map
         <Modal
