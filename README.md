@@ -18,9 +18,10 @@ Please see the [docs][docs] folder for more information on the development of th
 ## Features and Implementation
 
 ### Personal Profiles
-The user is able to
+After the user inputs up to 6 ethnicities, they are brought to a page displaying a map. Each map marker reflects an ethnicity and reveals a list of SNP characteristics specific to that particular ethnicity. Clicking on a SNP will lead to a detailed summary page.
 
 ### Ethnicities and Subpopulations
+Users are able to select from a list of general ethnicities, which each map to more specific subpopulations. 
 
 ### SNPs
 
