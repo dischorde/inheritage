@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import {customStyles} from './modal_style';
+import { Link } from 'react-router';
 
 const _getCoordsObj = latLng => ({
   lat: latLng.lat(),
@@ -94,25 +95,16 @@ class Map extends React.Component {
     if ( ethnicity.data_points !== undefined) {
       return ethnicity.data_points.map(function(data, idx) {
         return(
+          <Link to={`/snps/${data.snp_id}`}>
           <div className="snp-detail" key={idx}>
-            <i className="fa fa-circle" aria-hidden="true"></i>
+
             <div className="snp-detail-inner">
-              <div className="snp-ref">
-                <h1 className="snp">
-                  SNP:</h1><h1>{data.snp_name}</h1>
-              </div>
-              <div className="snp-info">
-                <div className="snp-percent">
-                  <h1>
-                    Susceptibility: {`${data.percent}`}%
-                  </h1>
-                </div>
-                <div className="snp-summary">
-                  Likely to: {data.summary}
-                </div>
-              </div>
+              <h2>
+                {data.percent}% of {data.pop_name}  {data.summary}
+              </h2>
             </div>
           </div>
+        </Link>
         );
       });
     } else {
@@ -155,7 +147,6 @@ setMarkers(map) {
   for(let i=0; i < this.props.ethnicities.length; i++){
     let lat = this.props.ethnicities[i].lat;
     let long = this.props.ethnicities[i].long;
-    debugger
     this.addMarkersWithTimeOut(this.props.ethnicities[i], map, lat, long, i * 500);
   }
 }
@@ -176,7 +167,6 @@ addMarkersWithTimeOut(ethnicity, map, lat, long, timeout) {
       that.setState({modalOpen: true, currentEth: ethnicity});
     });
     markers.push(marker);
-    debugger
     }, timeout);
 
   }
@@ -208,6 +198,7 @@ addMarkersWithTimeOut(ethnicity, map, lat, long, timeout) {
                </div>
                <div>
                  {ethInfo}
+
                </div>
              </div>
            </div>
@@ -219,38 +210,21 @@ addMarkersWithTimeOut(ethnicity, map, lat, long, timeout) {
 }
 
 export default Map;
+//
+// <div className="snp-ref">
+//   <h1 className="snp">
+//     SNP:</h1><h1>{data.snp_name}</h1>
+// </div>
+// <div className="snp-info">
+//   <div className="snp-percent">
+//     <h1>
+//       Susceptibility: {`${data.percent}`}%
+//     </h1>
+//   </div>
+//   <div className="snp-summary">
+//     Likely to: {data.summary}
+//   </div>
+// </div>
 
-//
-// componentDidMount() {
-//   const map = this.refs.map;
-//   this.map = new google.maps.Map(map, this.state._mapOptions);
-//
-//   var marker = new google.maps.Marker({
-//           position: {
-//              lat: 41.9028, lng: 12.4964
-//           },
-//           map: this.map,
-//           title: '!'
-//         });
-// }
-
-// var marker = new google.maps.Marker({
-//       position: {
-//               lat: lat, lng: long
-//             },
-//        map: map,
-//        title: 'Hello World!'
-//      });
-
-// addMarkersWithTimeOut(map, lat, long, timeout) {
-//   var markers = [];
-//     window.setTimeout(function() {
-//          markers.push(new google.maps.Marker({
-//            position: {lat: lat, lng: long},
-//            map: map,
-//            animation: google.maps.Animation.DROP
-//          }));
-//        }, timeout);
-//   }
-//
-//
+  // <i className="fa fa-circle" aria-hidden="true"></i>
+  //  <Link to={`/users/${this.props.user.id}/trips`}>
