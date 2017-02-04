@@ -16,12 +16,15 @@ class SubPopulation(models.Model):
     code = models.CharField(max_length=5,null=False)
     specific = models.BooleanField(null=False)
     def __str__(self):
-        return self.name
+        return self.code
 
 class DataPoint(models.Model):
     snp = models.ForeignKey(Snp, null=False)
     sub_population = models.ForeignKey(SubPopulation, null=False)
     percent = models.IntegerField(null=False)
+
+    class Meta:
+        unique_together = ("snp", "sub_population")
 
 class Ethnicity(models.Model):
     name = models.CharField(max_length=255, null=False)
