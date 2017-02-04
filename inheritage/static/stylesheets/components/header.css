@@ -2,7 +2,7 @@
   font-family: 'Source Sans Pro', sans-serif;
   position: fixed;
   width: 100%;
-  background-color: rgba(60, 205, 112, .9);
+  background-color: rgb(60, 205, 112);
   display: flex;
   justify-content: space-between;
   align-items: center;
