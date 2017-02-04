@@ -42,7 +42,7 @@ class SnpDetail extends React.Component {
             <YAxis/>
             <CartesianGrid strokeDasharray="3 3"/>
             <Tooltip/>
-            <Bar dataKey="percent" fill="#FAB675" />
+            <Bar dataKey="percent" fill="#FAB675" opacity={0.85} />
           </BarChart>
         </div>
       </div>

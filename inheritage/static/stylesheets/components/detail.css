@@ -6,7 +6,7 @@
   background-image: url("http://res.cloudinary.com/bronwyndunn/image/upload/c_scale,h_1631/v1486242169/fire_vnfwjf.jpg");
   background-size: cover;
   background-position: center;
-  height: 450px;
+  height: 350px;
 }
 
 .snp-detail-img {
@@ -30,12 +30,14 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
+  line-height: 2em;
+  color: #424647;
 }
 
 .bar-container p {
   text-align: center;
-  font-weight: 300;
-  margin: 0px 200px 0px 200px;
+  margin: 0px 230px 0px 230px;
+  font-size: 16px;
 }
 
 .bar-container {
@@ -43,5 +45,9 @@
   padding-top: 40px;
   display: flex;
   justify-content: center;
-  font-size: 18px;
+  font-size: 14px;
+}
+
+.snp-description {
+  padding-bottom: 40px;
 }
