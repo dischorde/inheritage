@@ -25,11 +25,6 @@
       ... // more ethnicities
     ]
   },
-  forms: {
-    signUp: { errors: [] },
-    logIn: { errors: [] },
-    ethnicity: { errors: [] }
-  },
   ethnicities: [
     {
       id: 1,

@@ -1,4 +1,3 @@
-
 import { RECEIVE_PROFILE }  from '../actions/profile_actions';
 
 const profileReducer = (oldState = {}, action) => {

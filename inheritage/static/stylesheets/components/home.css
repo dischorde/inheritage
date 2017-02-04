@@ -74,7 +74,7 @@
   display: inline-block;
   text-align: center;
   font-size: 200%;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 
 #ethnicity-form {
@@ -135,6 +135,10 @@
   margin-top: 20px;
 }
 
+#ethnicity-errors {
+  padding-bottom: 30px;
+}
+
 /* INFO SECTION */
 #more-info {
   background-image: url("https://source.unsplash.com/31-pOduwZGE/2736x1824");
@@ -153,12 +157,12 @@
 #info-paragraphs {
   width: 50%;
   margin: 0 auto;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 
 #more-info h1 {
-  padding-bottom: 35px;
-  padding-top: 5%;
+  padding-top: 100px;
+  padding-bottom: 30px;
   font-size: 180%;
   text-transform: uppercase;
   font-weight: 600;
