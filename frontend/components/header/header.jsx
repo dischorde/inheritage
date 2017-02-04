@@ -15,7 +15,7 @@ class Header extends React.Component {
       $('html, body').animate({
         scrollTop: parseInt($("#more-info").offset().top)
       }, 1000);
-    }, 1000);
+    }, 200);
   }
 
   handleHome() {

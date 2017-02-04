@@ -5,7 +5,7 @@ export const customStyles = {
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
     zIndex: 2000
   },
   content : {
@@ -14,13 +14,13 @@ export const customStyles = {
     margin          : '0 auto',
     top             : '12%',
      zIndex          : 2001,
-     opacity         : '0',
+     opacity         : '0.7',
      transition      : "opacity 1s",
-     maxWidth        : '500px',
-     maxHeight       : '500px',
+     maxWidth        : '400px',
+     maxHeight       : '400px',
      border          : 'none',
      overflow        : 'hidden',
-     'border-radius' : 0
+     backgroundColor : '#FBFBFB'
 
   }
 };

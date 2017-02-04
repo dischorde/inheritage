@@ -6,9 +6,11 @@ class Profile extends React.Component {
 
   constructor(props){
     super(props);
+    this.zoomMap = this.zoomMap.bind(this);
     this.ethnicityInfo = this.ethnicityInfo.bind(this);
     this.ethnicityContainer = this.ethnicityContainer.bind(this);
     this.state = {
+      zoom: "",
       ethnicities: [
         { name: "South East Asian",
           percent: 50,
@@ -53,21 +55,30 @@ class Profile extends React.Component {
             };
           }
 
+  // componentDidMount() {
+  //   this.props.fetchProfile();
+  // }
+
+
+
   ethnicityInfo() {
+    let that = this;
     return this.state.ethnicities.map(function(ethnicity, idx){
       var ethnicities = `ethnicity-container-${idx}`;
       return (
         <div className={ethnicities} key={idx}>
-          <div className="ethnicity-name">
+          <div className="ethnicity-name" onClick={()=> that.zoomMap(ethnicity)}>
                 {ethnicity.name}
-            </div>
-            <div className="snp-detail">
-
             </div>
           </div>
       );
     });
   }
+
+  zoomMap(ethnicity) {
+    this.setState({zoom: ethnicity});
+  }
+
 
   ethnicityContainer() {
     let info = this.ethnicityInfo();
@@ -77,6 +88,7 @@ class Profile extends React.Component {
        </div>
     );
   }
+
 
   render() {
     const data = [
@@ -91,7 +103,6 @@ class Profile extends React.Component {
     	left: 350,
     	lineHeight: '24px'
     };
-
 
     let sidebar = this.ethnicityContainer();
     return (
@@ -116,7 +127,7 @@ class Profile extends React.Component {
 
         </div>
         <div className="map-container">
-            <Map ethnicities={this.state.ethnicities}/>
+            <Map ethnicities={this.state.ethnicities} zoom={this.state.zoom}/>
         </div>
       </div>
     );
