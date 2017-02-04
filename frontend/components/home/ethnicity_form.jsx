@@ -34,23 +34,37 @@ class EthnicityForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.name === "") {
-      this.setState({ errors: "please enter your name" });
+      this.setState({ errors: "Please enter your name." });
       return;
     }
     const numEthnicities = $(".dropdowns").children().length;
     const ethnicities = [];
+    let sumPercents = 0;
     for (let i = 1; i <= numEthnicities; i++) {
       if (isNaN(this.state[`percent${i}`])) {
-        this.setState({ errors: "please enter number values for the percents" });
+        this.setState({ errors: "Please enter number values for the percents." });
         return;
       }
+      if (!this.state[`ethnicity${i}`]) {
+        this.setState({ errors: "Please make sure you select your ethnicities." });
+        return;
+      }
+
       ethnicities.push(
         {
           percent: this.state[`percent${i}`],
           id: this.state[`ethnicity${i}`]
         }
       );
+
+      sumPercents += this.state[`percent${i}`];
     }
+
+    if (sumPercents !== 100) {
+      this.setState({ errors: "Please make sure your percents add up to 100." });
+      return;
+    }
+
     const profile = {
       name: this.state.name,
       ethnicities
