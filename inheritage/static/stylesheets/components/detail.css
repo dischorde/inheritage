@@ -1,26 +1,54 @@
-#snp-detail-container {
+.snp-detail-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px 140px 0px 140px;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-image: url("http://res.cloudinary.com/bronwyndunn/image/upload/c_scale,h_1631/v1486242169/fire_vnfwjf.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+}
+
+.snp-detail-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.snp-detail-description {
-  font-size: 2rem;
+.snp-detail-container h1 {
+  font-size: 80px;
+}
+
+.bar-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-bottom: 50px;
-}
-
-.snp-detail-description h1 {
-  margin-bottom: 10px;
-  font-weight: 400;
-}
-
-.snp-detail-description p {
-  font-size: 17px;
-  font-weight: 300;
   text-align: center;
+  align-items: center;
+  line-height: 2em;
+  color: #424647;
+}
+
+.bar-container p {
+  text-align: center;
+  margin: 0px 230px 0px 230px;
+  font-size: 16px;
+}
+
+.bar-container {
+  font-family: 'Source Sans Pro', sans-serif;
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  padding-bottom: 50px;
+}
+
+.snp-description {
+  padding-bottom: 40px;
 }
