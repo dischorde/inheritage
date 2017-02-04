@@ -1,87 +1,22 @@
-
-
 # Inheritage
 
 ## Background
-The 1000 Genome Project ran over a span of 7 years and resulted in the creation of the largest public database of human genetic information. Our project makes this information accessible to everyone in a fun and easy to understand way by displaying genetic statistics based on their heritage on an interactive map. Inheritage will exclusively contain information on Single Nucleotide Polymorphisms (SNP). 
+The 1000 Genome Project ran over a span of 7 years and resulted in the creation of the largest public database of human genetic information. Our project makes this information accessible to everyone in a fun and easy to understand way by displaying genetic statistics based on their heritage on an interactive map. Inheritage will exclusively contain information on Single Nucleotide Polymorphisms (SNP), a common variance between different ethnicities.
 
-This project will incorporate a Python backend with Django framework and a React.js frontend. 
+This project incorporates a Python backend with Django framework and a React.js frontend.
 
-## Group Members
-- [Chloe Chou](https://github.com/chloejchou)
-- [ Katarina Rossi](https://github.com/dischorde)
-- [Lauren Madigan](https://github.com/lmadigan)
-- [Bronwyn Dunn](https://github.com/bronwyndunn)
+Please see the [docs][docs] folder for more information on the development of this project.
 
+## Features and Implementation
 
-## Functionality and MVPs:
-- [ ] Hosting on Heroku
-- [ ] Allows user to input ethnicities 
-- [ ] Displays these ethnic locations on an interactive map 
-- [ ] Gives detailed information on each SNP
-- [ ] Production README
+### Personal Profiles
 
-## Design Docs
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Sample State][sample-state]
+### Ethnicities and Subpopulations
 
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+### SNPs
 
-## Implementation Timeline
+## Future Directions
+- We plan to allow the user to create an account so that they are able to see their profile the next time they log in.
+- We also plan to create a SNP index, so that the user can view all the SNPs on one page.
 
-### Day 1
-
-- Find some SNPs (all)
-- Create models & project (Kat & Bronwyn)
-- Create Header (Chloe)
-- Research Google Maps & a graph API (Lauren)
-
-### Day 2
-
-- Link React to Django (Kat & Bronwyn)
-- Create Django routes & views (Kat & Bronwyn)
-- Create Home Page & Auth Form (Chloe)
-- Create Map (Lauren)
-
-### Day 3
-- Implement Tastypie (Kat)
-- Create Django routes & views (Bronwyn)
-- Create Ethnicity Form (Chloe)
-- Create Map (Lauren) 
-
-### Day 4 
-- Research Redis (Kat)
-- Seed Database (all)
-- Connect backend and frontend (Bronwyn)
-
-### Day 5 
-- Implement Redis (Kat & Bronwyn)
-- Create SNP Detail Page (Chloe)
-- Create SNP Graph (Lauren)
-
-### Day 6 
-- Help with frontend (Kat & Bronwyn)
-- Create SNP Detail Page (Chloe)
-- Create SNP Graph (Lauren)
-
-### Day 7
-- Polish frontend (all)
-
-### Bonus Features (TBD)
-
-- Profile 
-- SNP Index 
-
-
-
-
-
-
-
+[docs]: /docs
