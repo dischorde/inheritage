@@ -6,7 +6,7 @@ class SnpResource(DjangoResource):
     def detail(self, pk):
         snp = Snp.objects.get(id=pk)
 
-        dp_set = snp.datapoint_set.all()
+        dp_set = snp.datapoint_set.filter(specific=false)
         data_points = {}
         for dp in dp_set:
             data_points[dp.id] = {
