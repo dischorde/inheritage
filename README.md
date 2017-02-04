@@ -18,6 +18,7 @@ Please see the [docs][docs] folder for more information on the development of th
 ## Features and Implementation
 
 ### Personal Profiles
+The user is able to
 
 ### Ethnicities and Subpopulations
 
