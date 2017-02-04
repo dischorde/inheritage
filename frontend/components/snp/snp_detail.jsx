@@ -31,11 +31,11 @@ class SnpDetail extends React.Component {
         <div className="snp-detail-container">
           <div className="snp-detail-img">
             <h1>{this.props.snp.name}</h1>
-            <p className="snp-description">{this.props.snp.description}</p>
           </div>
         </div>
 
         <div className="bar-container">
+          <p className="snp-description">{this.props.snp.description}</p>
           <BarChart width={600} height={300} data={data}
             margin={{top: 5, right: 30, left: 20, bottom: 5}}>
             <XAxis dataKey="name"/>

@@ -25,10 +25,17 @@
   font-size: 80px;
 }
 
-.snp-detail-container p {
-  padding: 0px 120px 0px 120px;
+.bar-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.bar-container p {
   text-align: center;
   font-weight: 300;
+  margin: 0px 200px 0px 200px;
 }
 
 .bar-container {
@@ -36,4 +43,5 @@
   padding-top: 40px;
   display: flex;
   justify-content: center;
+  font-size: 18px;
 }
