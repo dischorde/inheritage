@@ -3,16 +3,14 @@
 
 
 #### HeaderContainer
- - Header 
-	 - AuthForm
+ - Header
 
-
-#### HomeContainer 
-- Home 
+#### HomeContainer
+- Home
 	- EthnicityFormContainer
 		- EthnicityForm
 
-#### ProfileContainer 
+#### ProfileContainer
 - Profile
 - MapContainer
 	- Map
@@ -20,7 +18,6 @@
 
 #### SnpDetailContainer
 - SnpDetail
-	- SnpGraph
 
 
 ## Routes
