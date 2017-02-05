@@ -5,11 +5,11 @@ from django.contrib.auth.models import User
 import pdb
 
 class ProfileResource(DjangoResource):
-    def is_authenticated(self):
-        # TODO: Figure out how to authenticate
-        # Open everything wide!
-        # DANGEROUS, DO NOT DO IN PRODUCTION.
-        return True
+    # def is_authenticated(self):
+    #     # TODO: Figure out how to authenticate
+    #     # Open everything wide!
+    #     # DANGEROUS, DO NOT DO IN PRODUCTION.
+    #     return True
 
     def detail(self, pk):
         profile = Profile.objects.get(id=pk)
