@@ -144,6 +144,7 @@ componentWillMount() {
   _onModalClose() {
     this.setState({modalOpen: false });
     customStyles.content.opacity = 0;
+    this.state.map.panTo({lat: 35, lng: -30});
   }
 
   onModalOpen() {
