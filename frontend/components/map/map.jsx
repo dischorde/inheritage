@@ -123,11 +123,15 @@ componentDidMount() {
   this.map = new google.maps.Map(map, _mapOptions);
   this.setMarkers(this.map);
   this.setState({map: this.map});
+  google.maps.event.addListener('click', function() {
+    this.state.map.panTo({lat: 35, lng: -30});
+    this.state.map.setZoom(2);
+  });
 }
 
 componentDidUpdate() {
   if (this.props.zoom !== "") {
-    this.zoomMap(this.state.zoom);
+    this.zoomMap(this.props.zoom);
   }
   this.snpDataPoints();
 }
@@ -170,6 +174,7 @@ addMarkersWithTimeOut(ethnicity, map, lat, long, timeout, i) {
     google.maps.event.addListener(marker, 'click', function() {
       that.setState({modalOpen: true, currentEth: ethnicity});
     });
+
     markers.push(marker);
     }, timeout);
 
@@ -178,8 +183,10 @@ addMarkersWithTimeOut(ethnicity, map, lat, long, timeout, i) {
   zoomMap(ethnicity) {
     let lat = ethnicity.lat;
     let long = ethnicity.long;
+    let latLng = new google.maps.LatLng(parseInt(lat), parseInt(long))
+    debugger
+    this.state.map.panTo(latLng);
     this.state.map.setZoom(4);
-    this.state.map.setCenter(lat, long);
   }
 
 
@@ -202,7 +209,6 @@ addMarkersWithTimeOut(ethnicity, map, lat, long, timeout, i) {
                </div>
                <div>
                  {ethInfo}
-
                </div>
              </div>
            </div>

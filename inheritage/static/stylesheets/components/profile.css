@@ -150,31 +150,6 @@ body{overflow: visible !important;}
   background-color: #fff;
 }
 
-
-.percent:nth-child(1){
-  color: #8FE6FA;
-}
-
-.percent:nth-child(2) {
-  color: #F77F80;
-}
-
-.percent:nth-child(3){
+.percent {
   color: #FAB675;
-}
-
-.percent:nth-child(4){
-  color: #3CCD70;
-}
-
-.percent:nth-child(5){
-  color: #779CF5;
-}
-
-.percent:nth-child(6){
-  color: #FAB675;
-}
-
-.percent:nth-child(7){
-  color: #8FE6FA;
 }
