@@ -5,15 +5,17 @@ body{overflow: visible !important;}
   z-index: 1;
   top: 0;
   left: 0;
-  width: 250px;
-  background-color: transparent;
+  width: 230px;
+  height: 100%;
+  background-color: #020202;
+  opacity: 0.6;
   display: flex;
   flex-direction: column;
 }
 
 .profile-top{
   background: black;
-  opacity: 0.6;
+  opacity: 1;
   width: 100%;
   height: 200px;
   position: relative;
@@ -36,7 +38,6 @@ body{overflow: visible !important;}
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 20px;
   color: white;
-  text-shadow: 1px 1px #6E6D6D;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -108,28 +109,27 @@ body{overflow: visible !important;}
   font-size: 17px;
   align-items: center;
   position: relative;
-  text-shadow: 1px 1px #6E6D6D;
 }
 
 
 .ethnicity-container-0{
-  color: #FAB675;
-}
-
-.ethnicity-container-1{
-  color: #779CF5;
-}
-
-.ethnicity-container-2{
   color: #8FE6FA;
 }
 
-.ethnicity-container-3{
+.ethnicity-container-1{
   color: #F77F80;
 }
 
-.ethnicity-container-4{
+.ethnicity-container-2{
+  color: #FAB675;
+}
+
+.ethnicity-container-3{
   color: #3CCD70;
+}
+
+.ethnicity-container-4{
+  color: #779CF5;
 }
 
 .ethnicity-container-5{
@@ -137,7 +137,7 @@ body{overflow: visible !important;}
 }
 
 .ethnicity-container-6{
-  color: #FAB675;
+  color: #8FE6FA;
 }
 
 #container {

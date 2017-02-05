@@ -75,6 +75,9 @@ const _mapOptions = {
 class Map extends React.Component {
   constructor(props) {
     super(props);
+    this.pins = ['http://res.cloudinary.com/dtnwzbeum/image/upload/v1486250228/blue-marker_bl0bvf.png', 'http://res.cloudinary.com/dtnwzbeum/image/upload/v1486250236/pink-marker_dfr0xu.png',
+     'http://res.cloudinary.com/dtnwzbeum/image/upload/v1486250233/orange-marker_zninxs.png', 'http://res.cloudinary.com/dtnwzbeum/image/upload/v1486250231/green-marker_mb0y98.png',
+     'http://res.cloudinary.com/dtnwzbeum/image/upload/v1486250264/purple-marker_yl4djt.png', 'http://res.cloudinary.com/dtnwzbeum/image/upload/v1486250228/blue-marker_bl0bvf.png'];
     this.state = {
       map: {},
       markers: [],
@@ -147,10 +150,10 @@ setMarkers(map) {
   for(let i=0; i < this.props.ethnicities.length; i++){
     let lat = this.props.ethnicities[i].lat;
     let long = this.props.ethnicities[i].long;
-    this.addMarkersWithTimeOut(this.props.ethnicities[i], map, lat, long, i * 500);
+    this.addMarkersWithTimeOut(this.props.ethnicities[i], map, lat, long, i * 500, i);
   }
 }
-addMarkersWithTimeOut(ethnicity, map, lat, long, timeout) {
+addMarkersWithTimeOut(ethnicity, map, lat, long, timeout, i) {
   var markers = [];
   let latLng = new google.maps.LatLng(lat, long)
   setTimeout(() => {
@@ -158,6 +161,7 @@ addMarkersWithTimeOut(ethnicity, map, lat, long, timeout) {
 
     var marker = new google.maps.Marker({
        position: latLng,
+       icon: that.pins[i],
        map,
        animation: google.maps.Animation.DROP,
        visibile: true
@@ -210,21 +214,3 @@ addMarkersWithTimeOut(ethnicity, map, lat, long, timeout) {
 }
 
 export default Map;
-//
-// <div className="snp-ref">
-//   <h1 className="snp">
-//     SNP:</h1><h1>{data.snp_name}</h1>
-// </div>
-// <div className="snp-info">
-//   <div className="snp-percent">
-//     <h1>
-//       Susceptibility: {`${data.percent}`}%
-//     </h1>
-//   </div>
-//   <div className="snp-summary">
-//     Likely to: {data.summary}
-//   </div>
-// </div>
-
-  // <i className="fa fa-circle" aria-hidden="true"></i>
-  //  <Link to={`/users/${this.props.user.id}/trips`}>
