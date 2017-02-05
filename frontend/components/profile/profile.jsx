@@ -70,7 +70,7 @@ class Profile extends React.Component {
     } else {
       let that = this;
       return this.props.profile.ethnicities.map(function(eth, idx) {
-        return {name: eth.name, percent: 0, fill: that.state.colors[idx]} ;
+        return {name: eth.name, percent: eth.percent , fill: that.state.colors[idx]} ;
       });
     }
   }
@@ -100,7 +100,7 @@ class Profile extends React.Component {
               </div>
                 <div className="profile-chart">
                   <RadialBarChart width={230} height={100} cx={100} cy={100} innerRadius={10} outerRadius={100} barSize={10} data={data}>
-                  <RadialBar minAngle={15} label background clockWise={true} dataKey='percent'/>
+                  <RadialBar minAngle={15} maxAngle={90} label background clockWise={true} dataKey='percent' fillOpacity={1}/>
                   </RadialBarChart>
                 </div>
                 <div className="user-name">

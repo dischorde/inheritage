@@ -98,12 +98,12 @@ class Map extends React.Component {
     if ( ethnicity.data_points !== undefined) {
       return ethnicity.data_points.map(function(data, idx) {
         return(
-          <Link to={`/snps/${data.snp_id}`}>
+          <Link to={`/snp/${data.snp_id}`}>
           <div className="snp-detail" key={idx}>
 
             <div className="snp-detail-inner">
               <h2>
-                {data.percent}% of {data.pop_name}  {data.summary}
+                <span className="percent">{data.percent}%</span> of {data.pop_name}  {data.summary}
               </h2>
             </div>
           </div>
