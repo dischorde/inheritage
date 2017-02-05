@@ -6,11 +6,10 @@ import pdb
 
 class ProfileResource(DjangoResource):
     def is_authenticated(self):
-        # TODO: Figure out how to authenticate
-        # Open everything wide!
-        # DANGEROUS, DO NOT DO IN PRODUCTION.
-        print self.request.get_host()
-        return True
+        if (self.request.get_host() == 'inheritage.herokuapp.com'):
+            return True
+        else:
+            return False
 
     def detail(self, pk):
         profile = Profile.objects.get(id=pk)
