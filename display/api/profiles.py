@@ -1,12 +1,13 @@
 from restless.dj import DjangoResource
+from django.conf import settings
 
 from display.models import *
 from django.contrib.auth.models import User
-import pdb
 
 class ProfileResource(DjangoResource):
     def is_authenticated(self):
-        if (self.request.get_host() == 'inheritage.herokuapp.com'):
+        host = self.request.get_host().split(':')[0]
+        if host in settings.ALLOWED_HOSTS:
             return True
         else:
             return False
