@@ -55,12 +55,10 @@ This project will incorporate a Python backend with Django framework and a React
 - Create Map (Lauren)
 
 ### Day 4
-- Research Redis (Kat)
 - Seed Database (all)
 - Connect backend and frontend (Bronwyn)
 
 ### Day 5
-- Implement Redis (Kat & Bronwyn)
 - Create SNP Detail Page (Chloe)
 - Create SNP Graph (Lauren)
 

@@ -72,7 +72,6 @@ class EthnicityForm extends React.Component {
 
 
     this.props.createProfile(profile).then((data) => {
-      console.log(data);
       this.props.router.push(`/profile/${data.profile}`);
     });
   }
