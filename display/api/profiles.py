@@ -13,13 +13,13 @@ class ProfileResource(DjangoResource):
 
     def detail(self, pk):
         profile = Profile.objects.get(id=pk)
-        ethnicity_set = profile.userethnicity_set.all()
+        ethnicity_set = profile.userethnicity_set.select_related('ethnicity').all()
         ethnicities = []
 
         for user_ethnicity in ethnicity_set:
             data_points = []
             eth_ids = user_ethnicity.ethnicity_ids()
-            all_dps = DataPoint.objects.filter(sub_population_id__in=eth_ids).select_related('snp')
+            all_dps = DataPoint.objects.filter(sub_population_id__in=eth_ids).order_by('-sub_population__specific').select_related('snp', 'sub_population')
             for dp in all_dps:
                 dp_detail = {
                     'id': dp.id,
