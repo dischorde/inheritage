@@ -118,21 +118,30 @@ class Map extends React.Component {
     }
   }
 
-componentDidMount() {
-  const map = this.refs.map;
-  this.map = new google.maps.Map(map, _mapOptions);
-  this.setMarkers(this.map);
-  this.setState({map: this.map});
+  componentDidMount() {
+    const map = this.refs.map;
+    this.map = new google.maps.Map(map, _mapOptions);
+    this.setMarkers(this.map);
+    this.setState({map: this.map});
+  }
 
-}
+  componentWillReceiveProps(newProps) {
+    if (newProps.reloadMap === true) {
+      const map = this.refs.map;
+      this.map = new google.maps.Map(map, _mapOptions);
+      this.setMarkers(this.map);
+      this.setState({map: this.map});
+      newProps.markReloaded();
+    }
+  }
 
-componentDidUpdate() {
-  this.snpDataPoints();
-}
+  componentDidUpdate() {
+    this.snpDataPoints();
+  }
 
-componentWillMount() {
-    Modal.setAppElement('body');
- }
+  componentWillMount() {
+      Modal.setAppElement('body');
+   }
 
 
   _onModalClose() {

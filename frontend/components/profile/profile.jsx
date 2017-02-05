@@ -12,8 +12,10 @@ class Profile extends React.Component {
     this.ethnicityContainer = this.ethnicityContainer.bind(this);
     this.mapData = this.mapData.bind(this);
     this.zoomMap = this.zoomMap.bind(this);
+    this.markReloaded = this.markReloaded.bind(this);
     this.state = {
       loading: true,
+      reloadMap: false,
       zoom: "",
       profile: {},
       colors: [
@@ -34,7 +36,17 @@ class Profile extends React.Component {
     });
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.params.profileId !== this.props.params.profileId) {
+      this.props.requestProfile(newProps.params.profileId).then(() => {
+        this.setState({ reloadMap: true });
+      });
+    }
+  }
 
+  markReloaded() {
+    this.setState({ reloadMap: false });
+  }
 
   ethnicityInfo() {
     let that = this;
@@ -111,7 +123,7 @@ class Profile extends React.Component {
 
         </div>
         <div className="map-container">
-            <Map ethnicities={this.props.profile.ethnicities} zoom={this.state.zoom}/>
+            <Map ethnicities={this.props.profile.ethnicities} zoom={this.state.zoom} reloadMap={this.state.reloadMap} markReloaded={this.markReloaded}/>
         </div>
       </div>
     );
