@@ -104,11 +104,11 @@ body{overflow: visible !important;}
   padding-bottom: 3px;
   display: flex;
   justify-content: center;
-  text-shadow: 1px 1px #6E6D6D;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 17px;
   align-items: center;
   position: relative;
+  opacity: 1;
 }
 
 
@@ -148,4 +148,33 @@ body{overflow: visible !important;}
   width: 80px;
   height: 80px;
   background-color: #fff;
+}
+
+
+.percent:nth-child(1){
+  color: #8FE6FA;
+}
+
+.percent:nth-child(2) {
+  color: #F77F80;
+}
+
+.percent:nth-child(3){
+  color: #FAB675;
+}
+
+.percent:nth-child(4){
+  color: #3CCD70;
+}
+
+.percent:nth-child(5){
+  color: #779CF5;
+}
+
+.percent:nth-child(6){
+  color: #FAB675;
+}
+
+.percent:nth-child(7){
+  color: #8FE6FA;
 }

@@ -103,7 +103,7 @@ class Map extends React.Component {
 
             <div className="snp-detail-inner">
               <h2>
-                {data.percent}% of {data.pop_name}  {data.summary}
+                <span className="percent">{data.percent}%</span> of {data.pop_name}  {data.summary}
               </h2>
             </div>
           </div>
