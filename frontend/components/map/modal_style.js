@@ -19,7 +19,7 @@ export const customStyles = {
      maxWidth        : '400px',
      maxHeight       : '400px',
      border          : 'none',
-     overflow        : 'hidden',
+     overflow        : 'scroll',
      backgroundColor : '#FBFBFB'
 
   }
