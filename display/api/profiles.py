@@ -9,7 +9,7 @@ class ProfileResource(DjangoResource):
         # TODO: Figure out how to authenticate
         # Open everything wide!
         # DANGEROUS, DO NOT DO IN PRODUCTION.
-        pdb.set_trace()
+        print self.request.get_host()
         return True
 
     def detail(self, pk):
