@@ -42,7 +42,7 @@ class Profile extends React.Component {
       return this.props.profile.ethnicities.map(function(ethnicity, idx){
         var ethnicities = `ethnicity-container-${idx}`;
         return (
-          <div className={ethnicities} key={idx} onClick={() => that.zoomMap(ethnicity)}>
+          <div className={ethnicities} key={idx}>
             <div className="ethnicity-name" >
                   {ethnicity.name}
               </div>

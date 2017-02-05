@@ -86,7 +86,7 @@ class Map extends React.Component {
       zoom: ""
     };
     this.snpDataPoints = this.snpDataPoints.bind(this);
-    this.zoomMap = this.zoomMap.bind(this);
+
     this._onModalClose = this._onModalClose.bind(this);
     this.setMarkers = this.setMarkers.bind(this);
     this.addMarkersWithTimeOut = this.addMarkersWithTimeOut.bind(this);
@@ -98,7 +98,7 @@ class Map extends React.Component {
     if ( ethnicity.data_points !== undefined) {
       return ethnicity.data_points.map(function(data, idx) {
         return(
-          <Link to={`/snp/${data.snp_id}`}>
+        <Link key={idx} to={`/snp/${data.snp_id}`}>
           <div className="snp-detail" key={idx}>
 
             <div className="snp-detail-inner">
@@ -123,16 +123,10 @@ componentDidMount() {
   this.map = new google.maps.Map(map, _mapOptions);
   this.setMarkers(this.map);
   this.setState({map: this.map});
-  google.maps.event.addListener('click', function() {
-    this.state.map.panTo({lat: 35, lng: -30});
-    this.state.map.setZoom(2);
-  });
+
 }
 
 componentDidUpdate() {
-  if (this.props.zoom !== "") {
-    this.zoomMap(this.props.zoom);
-  }
   this.snpDataPoints();
 }
 
@@ -144,20 +138,20 @@ componentWillMount() {
   _onModalClose() {
     this.setState({modalOpen: false });
     customStyles.content.opacity = 0;
-    this.state.map.panTo({lat: 35, lng: -30});
   }
 
   onModalOpen() {
     customStyles.content.opacity = 100;
   }
 
-setMarkers(map) {
-  for(let i=0; i < this.props.ethnicities.length; i++){
-    let lat = this.props.ethnicities[i].lat;
-    let long = this.props.ethnicities[i].long;
-    this.addMarkersWithTimeOut(this.props.ethnicities[i], map, lat, long, i * 500, i);
+  setMarkers(map) {
+    for(let i=0; i < this.props.ethnicities.length; i++){
+      let lat = this.props.ethnicities[i].lat;
+      let long = this.props.ethnicities[i].long;
+      this.addMarkersWithTimeOut(this.props.ethnicities[i], map, lat, long, i * 500, i);
+    }
   }
-}
+
 addMarkersWithTimeOut(ethnicity, map, lat, long, timeout, i) {
   var markers = [];
   let latLng = new google.maps.LatLng(lat, long)
@@ -181,13 +175,13 @@ addMarkersWithTimeOut(ethnicity, map, lat, long, timeout, i) {
 
   }
 
-  zoomMap(ethnicity) {
-    let lat = ethnicity.lat;
-    let long = ethnicity.long;
-    let latLng = new google.maps.LatLng(parseInt(lat), parseInt(long))
-    this.state.map.panTo(latLng);
-    this.state.map.setZoom(4);
-  }
+  // zoomMap(ethnicity) {
+  //   let lat = ethnicity.lat;
+  //   let long = ethnicity.long;
+  //   let latLng = new google.maps.LatLng(parseInt(lat), parseInt(long))
+  //   this.state.map.panTo(latLng);
+  //   this.state.map.setZoom(4);
+  // }
 
 
   render() {
