@@ -136,8 +136,15 @@ body{overflow: visible !important;}
   color: #FAB675;
 }
 
-.ethnicity-container-6{
-  color: #8FE6FA;
+
+.ethnicity-container-0:hover,
+.ethnicity-container-1:hover,
+.ethnicity-container-2:hover,
+.ethnicity-container-3:hover,
+.ethnicity-container-4:hover,
+.ethnicity-container-5:hover,
+.ethnicity-container-6:hover{
+  cursor: pointer;
 }
 
 #container {

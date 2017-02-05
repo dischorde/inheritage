@@ -184,15 +184,12 @@ addMarkersWithTimeOut(ethnicity, map, lat, long, timeout, i) {
     let lat = ethnicity.lat;
     let long = ethnicity.long;
     let latLng = new google.maps.LatLng(parseInt(lat), parseInt(long))
-    debugger
     this.state.map.panTo(latLng);
     this.state.map.setZoom(4);
   }
 
 
   render() {
-    console.log(this.state);
-    console.log(this.props);
     let ethInfo = this.snpDataPoints();
     return (
       <div className="map" ref="map">Map
