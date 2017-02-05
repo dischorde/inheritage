@@ -2,28 +2,47 @@ import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 class SnpDetail extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true
+    };
+  }
+
+  componentDidMount() {
+    this.props.requestSnp(this.props.params.snpId).then(() => {
+      this.setState({ loading: false });
+    });
+  }
+
   render() {
-    const data = [
-      {name: 'Page A', percent: 20},
-      {name: 'Page B', percent: 20},
-      {name: 'Page C', percent: 10},
-      {name: 'Page D', percent: 30},
-      {name: 'Page E', percent: 20}
-    ];
+    if (this.state.loading) {
+      return <h1></h1>;
+    }
+    const snpArr = [];
+    const snpData = this.props.snp.data_points;
+    for (var point in snpData) {
+      snpArr.push(snpData[point]);
+    }
+
+    const data = snpArr;
     return(
-      <div id="snp-detail-container">
-        <div className="snp-detail-description">
-          <h1>Lactose Intolerance</h1>
-          <p>Dairy products like milk, yogurt, and cheese contain the sugar lactose. An enzyme called lactase breaks down this sugar. If you don’t produce enough lactase, gut bacteria can convert lactose into gas, causing indigestion.</p>
+      <div>
+        <div className="snp-detail-container">
+          <div className="snp-detail-img">
+            <h1>{this.props.snp.name}</h1>
+          </div>
         </div>
-        <div>
+
+        <div className="bar-container">
+          <p className="snp-description">{this.props.snp.description}</p>
           <BarChart width={600} height={300} data={data}
             margin={{top: 5, right: 30, left: 20, bottom: 5}}>
             <XAxis dataKey="name"/>
             <YAxis/>
             <CartesianGrid strokeDasharray="3 3"/>
             <Tooltip/>
-            <Bar dataKey="percent" fill="#FAB675" />
+            <Bar dataKey="percent" fill="#FAB675" opacity={0.85} />
           </BarChart>
         </div>
       </div>
