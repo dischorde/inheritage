@@ -98,7 +98,7 @@ class Map extends React.Component {
     if ( ethnicity.data_points !== undefined) {
       return ethnicity.data_points.map(function(data, idx) {
         return(
-          <Link to={`/snps/${data.snp_id}`}>
+          <Link to={`/snp/${data.snp_id}`}>
           <div className="snp-detail" key={idx}>
 
             <div className="snp-detail-inner">
