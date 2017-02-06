@@ -9,7 +9,21 @@
 ## Background
 The 1000 Genome Project ran over a span of 7 years and resulted in the creation of the largest public database of human genetic information. Our project makes this information accessible to everyone in a fun and easy to understand way by displaying genetic statistics based on their heritage on an interactive map. Inheritage exclusively contain information on Single Nucleotide Polymorphisms (SNP), a common variance between different ethnicities.
 
-This project incorporates a Python backend using Django and a React.js/Redux frontend.
+This project incorporates a Django REST framework with a PostgreSQL database on the backend and a React.js with Redux framework on the frontend.
+
+Below is a non exhaustive list of the technologies that were used in the creation of this application:
+
+#### Frontend
+- React
+- React Router
+- Redux
+- Babel & Webpack
+- Recharts for React
+- Google Maps API
+
+#### Backend
+- Django & Django REST framework
+- WhiteNoise
 
 Please see the [docs][docs] folder for more information on the development of this project. The database was seeded with the help of [SNPedia][SNPedia] and [1000 Genomes][1000Genomes].
 
@@ -53,7 +67,6 @@ profile = Profile.objects.get(id=pk)
 Clicking on a data point in the modal leads to a summary page, with a description of the SNP and a graph displaying the frequency of the highlighted genotype in the more general super-populations.
 
 ![](media/snp-detail.png)
-
 
 
 ## Future Directions
