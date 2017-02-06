@@ -7,9 +7,9 @@
 </p>
 
 ## Background
-The 1000 Genome Project ran over a span of 7 years and resulted in the creation of the largest public database of human genetic information. Our project makes this information accessible to everyone in a fun and easy to understand way by displaying genetic statistics based on their heritage on an interactive map. Inheritage will exclusively contain information on Single Nucleotide Polymorphisms (SNP), a common variance between different ethnicities.
+The 1000 Genome Project ran over a span of 7 years and resulted in the creation of the largest public database of human genetic information. Our project makes this information accessible to everyone in a fun and easy to understand way by displaying genetic statistics based on their heritage on an interactive map. Inheritage exclusively contain information on Single Nucleotide Polymorphisms (SNP), a common variance between different ethnicities.
 
-This project incorporates a Python backend with Django framework and a React.js frontend.
+This project incorporates a Python backend using Django and a React.js/Redux frontend.
 
 Please see the [docs][docs] folder for more information on the development of this project. The database was seeded with the help of [SNPedia][SNPedia] and [1000 Genomes][1000Genomes].
 
@@ -19,11 +19,19 @@ Please see the [docs][docs] folder for more information on the development of th
 - [Lauren Madigan](https://github.com/lmadigan)
 - [Bronwyn Dunn](https://github.com/bronwyndunn)
 
-## Features and Implementation
-After the user inputs up to 6 ethnicities, they are brought to a page displaying a map. Each map marker reflects an ethnicity and reveals a list of SNP characteristics specific to that particular ethnicity. Clicking on a SNP will lead to a detailed summary page.
 
-### Personal Profiles
-A profile is created when users submit a list of general `ethnicities`. This creates a `profile`, which includes all the associated SNP data for specific `subpopulations` that fall underneath the umbrella of the submitted ethnicities.
+### Features and Implementation
+After the user submits a list of up to 6 general `ethnicities`, they are brought to a `profile` displaying a world map.
+
+![](media/ethnicity-form.png)
+<br><br>
+![](media/profile.png)
+
+ Each map marker reflects an ethnicity and reveals a modal includes all the associated SNP data for each ethnicity.
+
+![](media/modal.png)
+
+To fetch the appropriate statistics, we query the database for only the `data_points` belonging to specific `sub_populations` that fall underneath the umbrella of the submitted ethnicities
 
 ```python
 # in models.py
@@ -42,9 +50,15 @@ profile = Profile.objects.get(id=pk)
         all_dps = DataPoint.objects.filter(sub_population_id__in=eth_ids).order_by('-sub_population__specific').select_related('snp', 'sub_population')
 ```
 
+Clicking on a data point in the modal leads to a summary page, with a description of the SNP and a graph displaying the frequency of the highlighted genotype in the more general super-populations.
+
+![](media/snp-detail.png)
+
+
+
 ## Future Directions
-- We plan to allow the user to create an account so that they are able to see their profile the next time they log in.
-- We also plan to create a SNP index, so that the user can view all the SNPs on one page.
+- We plan to allow the user to create an account so that they are able to save their profile to view the next time they log in.
+- We also plan to create a SNP index, so users can more easily navigate to each SNP detail page.
 
 [docs]: /docs
 [SNPedia]: http://snpedia.com/
