@@ -42,11 +42,11 @@ After the user submits a list of up to 6 general `ethnicities`, they are brought
 <br><br>
 ![](media/profile.png)
 
- Each map marker reflects an ethnicity and reveals a modal includes all the associated SNP data for each ethnicity.
+ Each map marker reflects an ethnicity and reveals a modal including all the associated SNP data for each ethnicity.
 
 ![](media/modal.png)
 
-To fetch the appropriate statistics, we query the database for only the `data_points` belonging to specific `sub_populations` that fall underneath the umbrella of the submitted ethnicities
+To fetch the appropriate statistics, we query the database for only the `data_points` belonging to specific `sub_populations` that fall underneath the umbrella of the submitted ethnicities.
 
 ```python
 # in models.py
