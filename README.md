@@ -22,7 +22,8 @@ Below is a non exhaustive list of the technologies that were used in the creatio
 - Google Maps API
 
 #### Backend
-- Django & Django REST framework
+- Django
+- Restless
 - WhiteNoise
 
 Please see the [docs][docs] folder for more information on the development of this project. The database was seeded with the help of [SNPedia][SNPedia] and [1000 Genomes][1000Genomes].
