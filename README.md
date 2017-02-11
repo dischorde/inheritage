@@ -7,9 +7,9 @@
 </p>
 
 ## Background
-The 1000 Genome Project ran over a span of 7 years and resulted in the creation of the largest public database of human genetic information. Our project makes this information accessible to everyone in a fun and easy to understand way by displaying genetic statistics based on their heritage on an interactive map. Inheritage exclusively contain information on Single Nucleotide Polymorphisms (SNP), a common variance between different ethnicities.
+The 1000 Genome Project ran over a span of 7 years and resulted in the creation of the largest public database of human genetic information. Our project makes this information accessible to everyone in a fun and easy to understand way by displaying genetic statistics based on their heritage on an interactive map. Inheritage exclusively contains information on Single Nucleotide Polymorphisms (SNP), a common variance between different ethnicities.
 
-This project incorporates a Django REST framework with a PostgreSQL database on the backend and a React.js with Redux framework on the frontend.
+This project incorporates a Django backend with a RESTful API and PostgreSQL database and React.js with Redux on the frontend.
 
 Below is a non exhaustive list of the technologies that were used in the creation of this application:
 
